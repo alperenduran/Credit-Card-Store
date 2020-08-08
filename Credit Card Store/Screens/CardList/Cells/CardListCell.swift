@@ -13,7 +13,6 @@ import RxCocoa
 final class CardListCell: UITableViewCell {
     // MARK: - Properties
     private lazy var cardBaseView = with(UIView()) {
-        $0.backgroundColor = .appGrayColor
         $0.layer.cornerRadius = 16.0
     }
     
@@ -57,7 +56,7 @@ final class CardListCell: UITableViewCell {
         UIView()
     )
     
-    private lazy var credentialStack = vStack(space: 15.0)(
+    private lazy var credentialStack = vStack(space: 25.0)(
         cardNameLabel,
         cardNumberLabel,
         cardholderLabel,
@@ -92,12 +91,22 @@ final class CardListCell: UITableViewCell {
 private extension CardListCell {
     private func arrangeViews() {
         cardBaseView.addSubview(credentialStack)
+        cardBaseView.addSubview(cardTypeLogo)
         addSubview(cardBaseView)
+        
+        cardBaseView.makeShadow(opacity: 0.6, radius: 3)
+        cardBaseView.makeShadow(opacity: 0.4, radius: 5)
+        cardBaseView.makeShadow(opacity: 0.2, radius: 7)
         
         var constraints = credentialStack.alignFitEdges(insetedBy: 20.0)
         cardBaseView.alignFitEdges(insetedBy:10.0).forEach{
             constraints.append($0)
         }
+        [
+            cardTypeLogo.alighWidth(100.0),
+            cardTypeLogo.alignTrailing(to: cardBaseView, offset: -10.0),
+            cardTypeLogo.alignBottom(to: cardBaseView, offset: -10.0)
+        ].forEach { constraints.append($0) }
         
         constraints.activate()
     }
@@ -111,7 +120,8 @@ extension CardListCell {
             target.cardholderLabel.text = datasource.cardholder
             target.expirationDateLabel.text = datasource.expirationDate
             target.cvvLabel.text = datasource.cvv
-//          target.cardTypeLogo.image = UIImage(named: datasource.cardTypeImageName))
+            target.cardBaseView.backgroundColor = datasource.backgroundColor
+            target.cardTypeLogo.image = UIImage(named: datasource.cardTypeLogo)
         }
     }
 }

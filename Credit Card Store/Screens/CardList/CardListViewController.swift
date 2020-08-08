@@ -101,7 +101,8 @@ extension Reactive where Base == CardListViewController {
                 cardholderName: "Hayrettin Alperen Duran",
                 expirationMonth: "11",
                 expirationYear: "2020",
-                cvv: "123"
+                cvv: "123",
+                cardType: .masterCard
             )
             Current.keychain.addCard(card)
         }

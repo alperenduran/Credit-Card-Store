@@ -7,6 +7,7 @@
 //
 
 import Foundation
+import UIKit
 
 struct CardListCellDisplayDatasource {
     let name: String
@@ -14,5 +15,37 @@ struct CardListCellDisplayDatasource {
     let cardholder: String
     let expirationDate: String
     let cvv: String
-    let cardTypeImageName: String
+    let cardType: CardType
+}
+
+extension CardListCellDisplayDatasource {
+    var cardTypeLogo: String {
+        switch cardType {
+        case .masterCard:
+            return "masterCardLogo"
+        case .visa:
+            return "visaLogo"
+        case .amex:
+            return "amexLogo"
+        case .maestro:
+            return "maestroLogo"
+        case .other:
+            return "otherLogo"
+        }
+    }
+    
+    var backgroundColor: UIColor {
+        switch cardType {
+        case .masterCard:
+            return .masterCardColor
+        case .visa:
+            return .visaColor
+        case .amex:
+            return .amexColor
+        case .maestro:
+            return .maestroColor
+        case .other:
+            return . otherCardColor
+        }
+    }
 }
