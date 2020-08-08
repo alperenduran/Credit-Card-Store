@@ -17,7 +17,7 @@ extension UIColor {
     static let appPinkColor = UIColor(named: "AppPinkColor")!
     static let visaColor = UIColor(named: "VisaColor")!
     static let masterCardColor = UIColor(named: "MasterCardColor")!
-    static let maestroColor = UIColor(named: "MaestriColor")!
+    static let maestroColor = UIColor(named: "MaestroColor")!
     static let amexColor = UIColor(named: "AmexColor")!
     static let otherCardColor = UIColor(named: "OtherCardColor")!
 }

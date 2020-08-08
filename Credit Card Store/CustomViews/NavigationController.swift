@@ -120,7 +120,7 @@ private extension NavigationController {
     
     var closeBarButtonItem: UIBarButtonItem {
         let closeButton = UIBarButtonItem(
-            image: UIImage(named: "closeWhite"),
+            image: UIImage(named: "close"),
             style: .plain,
             target: nil,
             action: nil

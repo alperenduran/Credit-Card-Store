@@ -71,7 +71,7 @@ private extension CardListViewController {
         
         bag.insert(
             outputs.datasource.drive(rx.bindDatasource),
-            outputs.openAddScreen.drive(rx.showVc)
+            outputs.openAddScreen.drive(rx.showAddCard)
         )
     }
     
@@ -93,7 +93,7 @@ extension Reactive where Base == CardListViewController {
         }
     }
     
-    var showVc: Binder<Void> {
+    var addCard: Binder<Void> {
         Binder(base) { target, _ in
             let card = Card(
                 name: "My Garanti Card",
@@ -102,9 +102,16 @@ extension Reactive where Base == CardListViewController {
                 expirationMonth: "11",
                 expirationYear: "2020",
                 cvv: "123",
-                cardType: .masterCard
+                cardType: .other
             )
             Current.keychain.addCard(card)
+        }
+    }
+    
+    var showAddCard: Binder<Void> {
+        Binder(base) { target, _ in
+            let controller = AddCardViewController()
+            target.show(controller, sender: nil)
         }
     }
 }
