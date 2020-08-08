@@ -10,7 +10,6 @@
 		AD00906524DE90E9004EB706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906424DE90E9004EB706 /* AppDelegate.swift */; };
 		AD00906724DE90E9004EB706 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906624DE90E9004EB706 /* SceneDelegate.swift */; };
 		AD00906924DE90E9004EB706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906824DE90E9004EB706 /* ViewController.swift */; };
-		AD00906C24DE90E9004EB706 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD00906A24DE90E9004EB706 /* Main.storyboard */; };
 		AD00906E24DE90EA004EB706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD00906D24DE90EA004EB706 /* Assets.xcassets */; };
 		AD00907124DE90EA004EB706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */; };
 /* End PBXBuildFile section */
@@ -20,7 +19,6 @@
 		AD00906424DE90E9004EB706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD00906624DE90E9004EB706 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		AD00906824DE90E9004EB706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		AD00906B24DE90E9004EB706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		AD00906D24DE90EA004EB706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD00907024DE90EA004EB706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD00907224DE90EA004EB706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -59,7 +57,6 @@
 				AD00906424DE90E9004EB706 /* AppDelegate.swift */,
 				AD00906624DE90E9004EB706 /* SceneDelegate.swift */,
 				AD00906824DE90E9004EB706 /* ViewController.swift */,
-				AD00906A24DE90E9004EB706 /* Main.storyboard */,
 				AD00906D24DE90EA004EB706 /* Assets.xcassets */,
 				AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */,
 				AD00907224DE90EA004EB706 /* Info.plist */,
@@ -127,7 +124,6 @@
 			files = (
 				AD00907124DE90EA004EB706 /* LaunchScreen.storyboard in Resources */,
 				AD00906E24DE90EA004EB706 /* Assets.xcassets in Resources */,
-				AD00906C24DE90E9004EB706 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -147,14 +143,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
-		AD00906A24DE90E9004EB706 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				AD00906B24DE90E9004EB706 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -287,6 +275,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24276C4JVA;
 				INFOPLIST_FILE = "Credit Card Store/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -294,7 +283,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperenduran.Credit-Card-Store";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -305,6 +294,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24276C4JVA;
 				INFOPLIST_FILE = "Credit Card Store/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -312,7 +302,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.alperenduran.Credit-Card-Store";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
