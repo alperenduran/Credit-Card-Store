@@ -35,6 +35,17 @@
 		AD0090B024DE9A76004EB706 /* AirbnbCerealExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0090AA24DE9A76004EB706 /* AirbnbCerealExtraBold.ttf */; };
 		AD0090B224DE9A8B004EB706 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090B124DE9A8B004EB706 /* UIFontExtensions.swift */; };
 		AD0090B524DE9B63004EB706 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090B424DE9B63004EB706 /* NavigationController.swift */; };
+		AD0090C324DEB97E004EB706 /* CardListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090C224DEB97E004EB706 /* CardListViewModel.swift */; };
+		AD0090C524DEB98D004EB706 /* CardListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090C424DEB98D004EB706 /* CardListViewController.swift */; };
+		AD0090C824DEB9AE004EB706 /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090C724DEB9AE004EB706 /* Card.swift */; };
+		AD0090CA24DEBB60004EB706 /* CardListCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090C924DEBB60004EB706 /* CardListCell.swift */; };
+		AD0090D824DEC334004EB706 /* CardListCellDisplayDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090D724DEC334004EB706 /* CardListCellDisplayDatasource.swift */; };
+		AD0090DB24DEC856004EB706 /* UserDefaultsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090DA24DEC856004EB706 /* UserDefaultsManager.swift */; };
+		AD0090DD24DEC86C004EB706 /* UserDefaultsKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090DC24DEC86C004EB706 /* UserDefaultsKey.swift */; };
+		AD0090DF24DEC88F004EB706 /* UserDefaultsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090DE24DEC88F004EB706 /* UserDefaultsMediator.swift */; };
+		AD0090E124DED187004EB706 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E024DED187004EB706 /* CardListView.swift */; };
+		AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */; };
+		AD53755924DEDEF6003C3609 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -65,6 +76,17 @@
 		AD0090AA24DE9A76004EB706 /* AirbnbCerealExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCerealExtraBold.ttf; sourceTree = "<group>"; };
 		AD0090B124DE9A8B004EB706 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
 		AD0090B424DE9B63004EB706 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
+		AD0090C224DEB97E004EB706 /* CardListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewModel.swift; sourceTree = "<group>"; };
+		AD0090C424DEB98D004EB706 /* CardListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListViewController.swift; sourceTree = "<group>"; };
+		AD0090C724DEB9AE004EB706 /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		AD0090C924DEBB60004EB706 /* CardListCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCell.swift; sourceTree = "<group>"; };
+		AD0090D724DEC334004EB706 /* CardListCellDisplayDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListCellDisplayDatasource.swift; sourceTree = "<group>"; };
+		AD0090DA24DEC856004EB706 /* UserDefaultsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsManager.swift; sourceTree = "<group>"; };
+		AD0090DC24DEC86C004EB706 /* UserDefaultsKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsKey.swift; sourceTree = "<group>"; };
+		AD0090DE24DEC88F004EB706 /* UserDefaultsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMediator.swift; sourceTree = "<group>"; };
+		AD0090E024DED187004EB706 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
+		AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -108,6 +130,7 @@
 				AD0090A424DE9A53004EB706 /* Fonts */,
 				AD00907224DE90EA004EB706 /* Info.plist */,
 				AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */,
+				AD0090C624DEB99E004EB706 /* Models */,
 				AD00906624DE90E9004EB706 /* SceneDelegate.swift */,
 				AD0090B624DE9E22004EB706 /* Screens */,
 				AD00906824DE90E9004EB706 /* ViewController.swift */,
@@ -127,6 +150,8 @@
 				AD0090A024DE99DD004EB706 /* UIViewExtensions.swift */,
 				AD00908B24DE94EF004EB706 /* With.swift */,
 				AD0090B124DE9A8B004EB706 /* UIFontExtensions.swift */,
+				AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */,
+				AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -136,6 +161,7 @@
 			children = (
 				AD00909024DE955D004EB706 /* Environment.swift */,
 				AD00909224DE9576004EB706 /* Keychain */,
+				AD0090D924DEC801004EB706 /* UserDefaults */,
 			);
 			path = Environment;
 			sourceTree = "<group>";
@@ -174,8 +200,55 @@
 		AD0090B624DE9E22004EB706 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AD0090BD24DEB939004EB706 /* CardList */,
 			);
 			path = Screens;
+			sourceTree = "<group>";
+		};
+		AD0090BD24DEB939004EB706 /* CardList */ = {
+			isa = PBXGroup;
+			children = (
+				AD0090C424DEB98D004EB706 /* CardListViewController.swift */,
+				AD0090C224DEB97E004EB706 /* CardListViewModel.swift */,
+				AD0090BE24DEB944004EB706 /* Cells */,
+				AD0090BF24DEB950004EB706 /* Views */,
+			);
+			path = CardList;
+			sourceTree = "<group>";
+		};
+		AD0090BE24DEB944004EB706 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AD0090C924DEBB60004EB706 /* CardListCell.swift */,
+				AD0090D724DEC334004EB706 /* CardListCellDisplayDatasource.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		AD0090BF24DEB950004EB706 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				AD0090E024DED187004EB706 /* CardListView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		AD0090C624DEB99E004EB706 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				AD0090C724DEB9AE004EB706 /* Card.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		AD0090D924DEC801004EB706 /* UserDefaults */ = {
+			isa = PBXGroup;
+			children = (
+				AD0090DC24DEC86C004EB706 /* UserDefaultsKey.swift */,
+				AD0090DA24DEC856004EB706 /* UserDefaultsManager.swift */,
+				AD0090DE24DEC88F004EB706 /* UserDefaultsMediator.swift */,
+			);
+			path = UserDefaults;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -263,22 +336,33 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0090DD24DEC86C004EB706 /* UserDefaultsKey.swift in Sources */,
 				AD00906924DE90E9004EB706 /* ViewController.swift in Sources */,
 				AD00909124DE955D004EB706 /* Environment.swift in Sources */,
 				AD00909F24DE98D7004EB706 /* UIColorExtensions.swift in Sources */,
 				AD00909724DE95AA004EB706 /* KeychainKey.swift in Sources */,
 				AD00908C24DE94EF004EB706 /* With.swift in Sources */,
 				AD0090B524DE9B63004EB706 /* NavigationController.swift in Sources */,
+				AD0090C524DEB98D004EB706 /* CardListViewController.swift in Sources */,
+				AD0090DB24DEC856004EB706 /* UserDefaultsManager.swift in Sources */,
+				AD0090C824DEB9AE004EB706 /* Card.swift in Sources */,
 				AD00906524DE90E9004EB706 /* AppDelegate.swift in Sources */,
+				AD0090D824DEC334004EB706 /* CardListCellDisplayDatasource.swift in Sources */,
+				AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */,
 				AD0090B224DE9A8B004EB706 /* UIFontExtensions.swift in Sources */,
 				AD00908A24DE9452004EB706 /* RxExtensions.swift in Sources */,
+				AD0090DF24DEC88F004EB706 /* UserDefaultsMediator.swift in Sources */,
 				AD0090A324DE9A14004EB706 /* UIViewControllerExtensions.swift in Sources */,
+				AD0090CA24DEBB60004EB706 /* CardListCell.swift in Sources */,
+				AD53755924DEDEF6003C3609 /* UserDefaultsExtensions.swift in Sources */,
+				AD0090C324DEB97E004EB706 /* CardListViewModel.swift in Sources */,
 				AD00909D24DE984F004EB706 /* UIApplicationExtensions.swift in Sources */,
 				AD0090A124DE99DD004EB706 /* UIViewExtensions.swift in Sources */,
 				AD00909B24DE9678004EB706 /* KeychainMediator.swift in Sources */,
 				AD00908E24DE9519004EB706 /* UIStackViewExtensions.swift in Sources */,
 				AD00906724DE90E9004EB706 /* SceneDelegate.swift in Sources */,
 				AD00908224DE938D004EB706 /* UILayoutExtensions.swift in Sources */,
+				AD0090E124DED187004EB706 /* CardListView.swift in Sources */,
 				AD00909924DE95F1004EB706 /* KeychainManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -347,7 +431,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -401,7 +485,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 13.6;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;

@@ -14,6 +14,6 @@ struct KeychainMediator {
     var get = Environment.keychainManager.get(key:)
     var has = Environment.keychainManager.has(key:)
     var clear = Environment.keychainManager.clear
-    var addCreditCard = Environment.keychainManager.addCreditCard(value:)
-    var getCreditCards = Environment.keychainManager.getCreditCards
+    var addCard = Environment.keychainManager.addCard(card:)
+    var getCards = Environment.keychainManager.getCards
 }

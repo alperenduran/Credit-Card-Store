@@ -10,8 +10,10 @@ import Foundation
 
 struct Environment {
     var keychain = KeychainMediator()
+    var userDefaults = UserDefaultsMediator()
     
     static var keychainManager: KeychainManager!
+    static var userDefaultsManager: UserDefaultsManager!
 }
 
 var Current: Environment!

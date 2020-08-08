@@ -1,0 +1,117 @@
+//
+//  CardListCell.swift
+//  Credit Card Store
+//
+//  Created by Alperen Duran on 8.08.2020.
+//  Copyright © 2020 Alperen Duran. All rights reserved.
+//
+
+import UIKit
+import RxSwift
+import RxCocoa
+
+final class CardListCell: UITableViewCell {
+    // MARK: - Properties
+    private lazy var cardBaseView = with(UIView()) {
+        $0.backgroundColor = .appGrayColor
+        $0.layer.cornerRadius = 16.0
+    }
+    
+    private lazy var cardNumberLabel = with(UILabel()) {
+        $0.font = .font(type: .bold, size: 20.0)
+        $0.numberOfLines = 1
+        $0.textColor = .white
+    }
+    
+    private lazy var expirationDateLabel = with(UILabel()) {
+        $0.font = .font(type: .bold, size: 15.0)
+        $0.numberOfLines = 1
+        $0.textColor = .white
+    }
+    
+    private lazy var cvvLabel = with(UILabel()) {
+        $0.font = .font(type: .bold, size: 15.0)
+        $0.numberOfLines = 1
+        $0.textColor = .white
+    }
+    
+    private lazy var cardholderLabel = with(UILabel()) {
+        $0.font = .font(type: .bold, size: 15.0)
+        $0.numberOfLines = 1
+        $0.textColor = .white
+    }
+    
+    private lazy var cardNameLabel = with(UILabel()) {
+        $0.font = .font(type: .bold, size: 15.0)
+        $0.numberOfLines = 1
+        $0.textColor = .white
+    }
+    
+    private lazy var cardTypeLogo = with(UIImageView()) {
+        $0.contentMode = .scaleAspectFit
+    }
+    
+    private lazy var detailsStack = hStack(space: 10.0)(
+        expirationDateLabel,
+        cvvLabel,
+        UIView()
+    )
+    
+    private lazy var credentialStack = vStack(space: 15.0)(
+        cardNameLabel,
+        cardNumberLabel,
+        cardholderLabel,
+        detailsStack
+    )
+    
+    var bag = DisposeBag()
+    
+    // MARK: - Initialization
+    override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        
+        backgroundColor = .clear
+        selectionStyle = .none
+        
+        arrangeViews()
+        
+        layer.shouldRasterize = true
+        layer.rasterizationScale = UIScreen.main.scale
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
+    // MARK: - Reuse
+    override func prepareForReuse() {
+        bag = DisposeBag()
+    }
+}
+
+private extension CardListCell {
+    private func arrangeViews() {
+        cardBaseView.addSubview(credentialStack)
+        addSubview(cardBaseView)
+        
+        var constraints = credentialStack.alignFitEdges(insetedBy: 20.0)
+        cardBaseView.alignFitEdges(insetedBy:10.0).forEach{
+            constraints.append($0)
+        }
+        
+        constraints.activate()
+    }
+}
+
+extension CardListCell {
+    var populate: Binder<CardListCellDisplayDatasource> {
+        Binder(self) { target, datasource in
+            target.cardNameLabel.text = datasource.name
+            target.cardNumberLabel.text = datasource.cardNumber
+            target.cardholderLabel.text = datasource.cardholder
+            target.expirationDateLabel.text = datasource.expirationDate
+            target.cvvLabel.text = datasource.cvv
+//          target.cardTypeLogo.image = UIImage(named: datasource.cardTypeImageName))
+        }
+    }
+}

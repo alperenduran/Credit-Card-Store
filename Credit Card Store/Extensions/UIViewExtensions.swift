@@ -10,6 +10,18 @@ import UIKit
 import RxSwift
 import RxCocoa
 
+protocol ViewIdentifier: class {
+    static var identifier: String { get }
+}
+
+extension ViewIdentifier {
+    static var identifier: String {
+        return String(describing: self)
+    }
+}
+
+extension UIView: ViewIdentifier {}
+
 extension UIView {
     func round(corners: UIRectCorner, radius: CGFloat) {
         let size = CGSize(width: radius, height: radius)

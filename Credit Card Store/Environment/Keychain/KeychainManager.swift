@@ -42,11 +42,19 @@ extension KeychainManager {
         instance.clear()
     }
     
-    func addCreditCard(value: String) {
-        
+    func getCards() -> [Card] {
+        let data = instance.getData(KeychainKey.creditCards.rawValue) ?? .init()
+        let decodedData = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Card] ?? []
+        return decodedData
     }
     
-    func getCreditCards() {
-        
+    func addCard(card: Card) {
+        var cards = getCards()
+        cards.append(card)
+        let encodedData = try! NSKeyedArchiver.archivedData(
+            withRootObject: cards,
+            requiringSecureCoding: false
+        )
+        instance.set(encodedData, forKey: KeychainKey.creditCards.rawValue)
     }
 }
