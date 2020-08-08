@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -12,6 +12,29 @@
 		AD00906924DE90E9004EB706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906824DE90E9004EB706 /* ViewController.swift */; };
 		AD00906E24DE90EA004EB706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD00906D24DE90EA004EB706 /* Assets.xcassets */; };
 		AD00907124DE90EA004EB706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */; };
+		AD00907A24DE933B004EB706 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD00907924DE933B004EB706 /* RxSwift */; };
+		AD00907C24DE933B004EB706 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AD00907B24DE933B004EB706 /* RxCocoa */; };
+		AD00908224DE938D004EB706 /* UILayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908124DE938D004EB706 /* UILayoutExtensions.swift */; };
+		AD00908A24DE9452004EB706 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908924DE9452004EB706 /* RxExtensions.swift */; };
+		AD00908C24DE94EF004EB706 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908B24DE94EF004EB706 /* With.swift */; };
+		AD00908E24DE9519004EB706 /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908D24DE9519004EB706 /* UIStackViewExtensions.swift */; };
+		AD00909124DE955D004EB706 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909024DE955D004EB706 /* Environment.swift */; };
+		AD00909524DE959B004EB706 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD00909424DE959B004EB706 /* KeychainSwift */; };
+		AD00909724DE95AA004EB706 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909624DE95AA004EB706 /* KeychainKey.swift */; };
+		AD00909924DE95F1004EB706 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909824DE95F1004EB706 /* KeychainManager.swift */; };
+		AD00909B24DE9678004EB706 /* KeychainMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909A24DE9678004EB706 /* KeychainMediator.swift */; };
+		AD00909D24DE984F004EB706 /* UIApplicationExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909C24DE984F004EB706 /* UIApplicationExtensions.swift */; };
+		AD00909F24DE98D7004EB706 /* UIColorExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909E24DE98D7004EB706 /* UIColorExtensions.swift */; };
+		AD0090A124DE99DD004EB706 /* UIViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090A024DE99DD004EB706 /* UIViewExtensions.swift */; };
+		AD0090A324DE9A14004EB706 /* UIViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090A224DE9A14004EB706 /* UIViewControllerExtensions.swift */; };
+		AD0090AB24DE9A76004EB706 /* AirbnbCerealBook.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0090A524DE9A75004EB706 /* AirbnbCerealBook.ttf */; };
+		AD0090AC24DE9A76004EB706 /* AirbnbCerealBlack.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0090A624DE9A75004EB706 /* AirbnbCerealBlack.ttf */; };
+		AD0090AD24DE9A76004EB706 /* AirbnbCerealMedium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0090A724DE9A75004EB706 /* AirbnbCerealMedium.ttf */; };
+		AD0090AE24DE9A76004EB706 /* AirbnbCerealBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0090A824DE9A76004EB706 /* AirbnbCerealBold.ttf */; };
+		AD0090AF24DE9A76004EB706 /* AirbnbCerealLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0090A924DE9A76004EB706 /* AirbnbCerealLight.ttf */; };
+		AD0090B024DE9A76004EB706 /* AirbnbCerealExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = AD0090AA24DE9A76004EB706 /* AirbnbCerealExtraBold.ttf */; };
+		AD0090B224DE9A8B004EB706 /* UIFontExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090B124DE9A8B004EB706 /* UIFontExtensions.swift */; };
+		AD0090B524DE9B63004EB706 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090B424DE9B63004EB706 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +45,26 @@
 		AD00906D24DE90EA004EB706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD00907024DE90EA004EB706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD00907224DE90EA004EB706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD00908124DE938D004EB706 /* UILayoutExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UILayoutExtensions.swift; sourceTree = "<group>"; };
+		AD00908924DE9452004EB706 /* RxExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RxExtensions.swift; sourceTree = "<group>"; };
+		AD00908B24DE94EF004EB706 /* With.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = With.swift; sourceTree = "<group>"; };
+		AD00908D24DE9519004EB706 /* UIStackViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIStackViewExtensions.swift; sourceTree = "<group>"; };
+		AD00909024DE955D004EB706 /* Environment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Environment.swift; sourceTree = "<group>"; };
+		AD00909624DE95AA004EB706 /* KeychainKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainKey.swift; sourceTree = "<group>"; };
+		AD00909824DE95F1004EB706 /* KeychainManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainManager.swift; sourceTree = "<group>"; };
+		AD00909A24DE9678004EB706 /* KeychainMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainMediator.swift; sourceTree = "<group>"; };
+		AD00909C24DE984F004EB706 /* UIApplicationExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIApplicationExtensions.swift; sourceTree = "<group>"; };
+		AD00909E24DE98D7004EB706 /* UIColorExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIColorExtensions.swift; sourceTree = "<group>"; };
+		AD0090A024DE99DD004EB706 /* UIViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewExtensions.swift; sourceTree = "<group>"; };
+		AD0090A224DE9A14004EB706 /* UIViewControllerExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIViewControllerExtensions.swift; sourceTree = "<group>"; };
+		AD0090A524DE9A75004EB706 /* AirbnbCerealBook.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCerealBook.ttf; sourceTree = "<group>"; };
+		AD0090A624DE9A75004EB706 /* AirbnbCerealBlack.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCerealBlack.ttf; sourceTree = "<group>"; };
+		AD0090A724DE9A75004EB706 /* AirbnbCerealMedium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCerealMedium.ttf; sourceTree = "<group>"; };
+		AD0090A824DE9A76004EB706 /* AirbnbCerealBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCerealBold.ttf; sourceTree = "<group>"; };
+		AD0090A924DE9A76004EB706 /* AirbnbCerealLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCerealLight.ttf; sourceTree = "<group>"; };
+		AD0090AA24DE9A76004EB706 /* AirbnbCerealExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = AirbnbCerealExtraBold.ttf; sourceTree = "<group>"; };
+		AD0090B124DE9A8B004EB706 /* UIFontExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIFontExtensions.swift; sourceTree = "<group>"; };
+		AD0090B424DE9B63004EB706 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -29,6 +72,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD00909524DE959B004EB706 /* KeychainSwift in Frameworks */,
+				AD00907C24DE933B004EB706 /* RxCocoa in Frameworks */,
+				AD00907A24DE933B004EB706 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -55,13 +101,81 @@
 			isa = PBXGroup;
 			children = (
 				AD00906424DE90E9004EB706 /* AppDelegate.swift */,
-				AD00906624DE90E9004EB706 /* SceneDelegate.swift */,
-				AD00906824DE90E9004EB706 /* ViewController.swift */,
 				AD00906D24DE90EA004EB706 /* Assets.xcassets */,
-				AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */,
+				AD0090B324DE9A9D004EB706 /* CustomViews */,
+				AD00908F24DE953B004EB706 /* Environment */,
+				AD00907F24DE9361004EB706 /* Extensions */,
+				AD0090A424DE9A53004EB706 /* Fonts */,
 				AD00907224DE90EA004EB706 /* Info.plist */,
+				AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */,
+				AD00906624DE90E9004EB706 /* SceneDelegate.swift */,
+				AD0090B624DE9E22004EB706 /* Screens */,
+				AD00906824DE90E9004EB706 /* ViewController.swift */,
 			);
 			path = "Credit Card Store";
+			sourceTree = "<group>";
+		};
+		AD00907F24DE9361004EB706 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				AD00908924DE9452004EB706 /* RxExtensions.swift */,
+				AD00909C24DE984F004EB706 /* UIApplicationExtensions.swift */,
+				AD00909E24DE98D7004EB706 /* UIColorExtensions.swift */,
+				AD00908124DE938D004EB706 /* UILayoutExtensions.swift */,
+				AD00908D24DE9519004EB706 /* UIStackViewExtensions.swift */,
+				AD0090A224DE9A14004EB706 /* UIViewControllerExtensions.swift */,
+				AD0090A024DE99DD004EB706 /* UIViewExtensions.swift */,
+				AD00908B24DE94EF004EB706 /* With.swift */,
+				AD0090B124DE9A8B004EB706 /* UIFontExtensions.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		AD00908F24DE953B004EB706 /* Environment */ = {
+			isa = PBXGroup;
+			children = (
+				AD00909024DE955D004EB706 /* Environment.swift */,
+				AD00909224DE9576004EB706 /* Keychain */,
+			);
+			path = Environment;
+			sourceTree = "<group>";
+		};
+		AD00909224DE9576004EB706 /* Keychain */ = {
+			isa = PBXGroup;
+			children = (
+				AD00909624DE95AA004EB706 /* KeychainKey.swift */,
+				AD00909824DE95F1004EB706 /* KeychainManager.swift */,
+				AD00909A24DE9678004EB706 /* KeychainMediator.swift */,
+			);
+			path = Keychain;
+			sourceTree = "<group>";
+		};
+		AD0090A424DE9A53004EB706 /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				AD0090A624DE9A75004EB706 /* AirbnbCerealBlack.ttf */,
+				AD0090A824DE9A76004EB706 /* AirbnbCerealBold.ttf */,
+				AD0090A524DE9A75004EB706 /* AirbnbCerealBook.ttf */,
+				AD0090AA24DE9A76004EB706 /* AirbnbCerealExtraBold.ttf */,
+				AD0090A924DE9A76004EB706 /* AirbnbCerealLight.ttf */,
+				AD0090A724DE9A75004EB706 /* AirbnbCerealMedium.ttf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		AD0090B324DE9A9D004EB706 /* CustomViews */ = {
+			isa = PBXGroup;
+			children = (
+				AD0090B424DE9B63004EB706 /* NavigationController.swift */,
+			);
+			path = CustomViews;
+			sourceTree = "<group>";
+		};
+		AD0090B624DE9E22004EB706 /* Screens */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Screens;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -80,6 +194,11 @@
 			dependencies = (
 			);
 			name = "Credit Card Store";
+			packageProductDependencies = (
+				AD00907924DE933B004EB706 /* RxSwift */,
+				AD00907B24DE933B004EB706 /* RxCocoa */,
+				AD00909424DE959B004EB706 /* KeychainSwift */,
+			);
 			productName = "Credit Card Store";
 			productReference = AD00906124DE90E9004EB706 /* Credit Card Store.app */;
 			productType = "com.apple.product-type.application";
@@ -108,6 +227,10 @@
 				Base,
 			);
 			mainGroup = AD00905824DE90E9004EB706;
+			packageReferences = (
+				AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				AD00909324DE959B004EB706 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+			);
 			productRefGroup = AD00906224DE90E9004EB706 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -122,8 +245,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AD0090AF24DE9A76004EB706 /* AirbnbCerealLight.ttf in Resources */,
+				AD0090AC24DE9A76004EB706 /* AirbnbCerealBlack.ttf in Resources */,
+				AD0090AB24DE9A76004EB706 /* AirbnbCerealBook.ttf in Resources */,
 				AD00907124DE90EA004EB706 /* LaunchScreen.storyboard in Resources */,
+				AD0090B024DE9A76004EB706 /* AirbnbCerealExtraBold.ttf in Resources */,
+				AD0090AE24DE9A76004EB706 /* AirbnbCerealBold.ttf in Resources */,
 				AD00906E24DE90EA004EB706 /* Assets.xcassets in Resources */,
+				AD0090AD24DE9A76004EB706 /* AirbnbCerealMedium.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -135,8 +264,22 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD00906924DE90E9004EB706 /* ViewController.swift in Sources */,
+				AD00909124DE955D004EB706 /* Environment.swift in Sources */,
+				AD00909F24DE98D7004EB706 /* UIColorExtensions.swift in Sources */,
+				AD00909724DE95AA004EB706 /* KeychainKey.swift in Sources */,
+				AD00908C24DE94EF004EB706 /* With.swift in Sources */,
+				AD0090B524DE9B63004EB706 /* NavigationController.swift in Sources */,
 				AD00906524DE90E9004EB706 /* AppDelegate.swift in Sources */,
+				AD0090B224DE9A8B004EB706 /* UIFontExtensions.swift in Sources */,
+				AD00908A24DE9452004EB706 /* RxExtensions.swift in Sources */,
+				AD0090A324DE9A14004EB706 /* UIViewControllerExtensions.swift in Sources */,
+				AD00909D24DE984F004EB706 /* UIApplicationExtensions.swift in Sources */,
+				AD0090A124DE99DD004EB706 /* UIViewExtensions.swift in Sources */,
+				AD00909B24DE9678004EB706 /* KeychainMediator.swift in Sources */,
+				AD00908E24DE9519004EB706 /* UIStackViewExtensions.swift in Sources */,
 				AD00906724DE90E9004EB706 /* SceneDelegate.swift in Sources */,
+				AD00908224DE938D004EB706 /* UILayoutExtensions.swift in Sources */,
+				AD00909924DE95F1004EB706 /* KeychainManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -328,6 +471,43 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.1.1;
+			};
+		};
+		AD00909324DE959B004EB706 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 19.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		AD00907924DE933B004EB706 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		AD00907B24DE933B004EB706 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		AD00909424DE959B004EB706 /* KeychainSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD00909324DE959B004EB706 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			productName = KeychainSwift;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = AD00905924DE90E9004EB706 /* Project object */;
 }
