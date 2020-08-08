@@ -8,13 +8,20 @@
 
 import Foundation
 import KeychainSwift
+import RxSwift
 
 struct KeychainManager {
     let instance: KeychainSwift
+    let (cardsObserver, cardsObservable) = Observable<[Card]>.sharedPipe()
     
     init() {
         instance = KeychainSwift()
         instance.synchronizable = true
+        instance.clear()
+        let cards = try? instance.getObject(forKey: UserDefaultsKey.savedCards.rawValue, castTo: [Card].self)
+        if let cards = cards {
+            cardsObserver.onNext(cards)
+        }
     }
 }
 
@@ -42,19 +49,18 @@ extension KeychainManager {
         instance.clear()
     }
     
-    func getCards() -> [Card] {
-        let data = instance.getData(KeychainKey.creditCards.rawValue) ?? .init()
-        let decodedData = try! NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(data) as? [Card] ?? []
-        return decodedData
-    }
-    
     func addCard(card: Card) {
         var cards = getCards()
         cards.append(card)
-        let encodedData = try! NSKeyedArchiver.archivedData(
-            withRootObject: cards,
-            requiringSecureCoding: false
-        )
-        instance.set(encodedData, forKey: KeychainKey.creditCards.rawValue)
+        cardsObserver.onNext(cards)
+        try! instance.setObject(cards, forKey: UserDefaultsKey.savedCards.rawValue)
+    }
+    
+    func getCards() -> [Card] {
+        let cards = try? instance.getObject(forKey: UserDefaultsKey.savedCards.rawValue, castTo: [Card].self)
+        if let cards = cards {
+            cardsObserver.onNext(cards)
+        }
+        return cards ?? []
     }
 }

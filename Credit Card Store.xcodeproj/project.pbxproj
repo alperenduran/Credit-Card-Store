@@ -46,6 +46,7 @@
 		AD0090E124DED187004EB706 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E024DED187004EB706 /* CardListView.swift */; };
 		AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */; };
 		AD53755924DEDEF6003C3609 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */; };
+		AD53755B24DEF434003C3609 /* KeychainExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755A24DEF434003C3609 /* KeychainExtensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -87,6 +88,7 @@
 		AD0090E024DED187004EB706 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
+		AD53755A24DEF434003C3609 /* KeychainExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainExtensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -152,6 +154,7 @@
 				AD0090B124DE9A8B004EB706 /* UIFontExtensions.swift */,
 				AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */,
 				AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */,
+				AD53755A24DEF434003C3609 /* KeychainExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				AD00909F24DE98D7004EB706 /* UIColorExtensions.swift in Sources */,
 				AD00909724DE95AA004EB706 /* KeychainKey.swift in Sources */,
 				AD00908C24DE94EF004EB706 /* With.swift in Sources */,
+				AD53755B24DEF434003C3609 /* KeychainExtensions.swift in Sources */,
 				AD0090B524DE9B63004EB706 /* NavigationController.swift in Sources */,
 				AD0090C524DEB98D004EB706 /* CardListViewController.swift in Sources */,
 				AD0090DB24DEC856004EB706 /* UserDefaultsManager.swift in Sources */,

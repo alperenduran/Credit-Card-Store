@@ -67,16 +67,6 @@ extension CardListViewController: UITableViewDataSource {
 
 private extension CardListViewController {
     private func bindViewModelInputs() {
-        let card = Card(
-            name: "My Garanti Card",
-            cardNumber: "1234567812345678",
-            cardholderName: "Hayrettin Alperen Duran",
-            expirationMonth: "11",
-            expirationYear: "2020",
-            cvv: "123"
-        )
-//        Current.userDefaults.addCard(card)
-        
         let outputs = viewModel(inputs)
         
         bag.insert(
@@ -86,9 +76,8 @@ private extension CardListViewController {
     }
     
     private var inputs: CardListViewModelInput {
-        let cards = Current.userDefaults.getCards()
-        return CardListViewModelInput(
-            cards: Observable.of(cards),
+        CardListViewModelInput(
+            cards: Current.keychain.cardsEvent,
             cardNumberTapped: .never(),
             cardSelected: .never(),
             addButtonTapped: viewSource.addButton.rx.tap.asObservable()
@@ -106,8 +95,15 @@ extension Reactive where Base == CardListViewController {
     
     var showVc: Binder<Void> {
         Binder(base) { target, _ in
-            let controller = NavigationController(root: ViewController())
-            target.present(controller, animated: true)
+            let card = Card(
+                name: "My Garanti Card",
+                cardNumber: "1234567812345678",
+                cardholderName: "Hayrettin Alperen Duran",
+                expirationMonth: "11",
+                expirationYear: "2020",
+                cvv: "123"
+            )
+            Current.keychain.addCard(card)
         }
     }
 }
