@@ -15,9 +15,11 @@ final class AddCardViewController: UIViewController {
     // MARK: - Properties
     lazy var viewSource = AddCardView()
     let bag = DisposeBag()
+    let datasource: AddCardNavigationDatasource
     
     // MARK: - Initialization
-    init() {
+    init(with datasource: AddCardNavigationDatasource) {
+        self.datasource = datasource
         super.init(nibName: nil, bundle: nil)
     }
     
@@ -34,5 +36,30 @@ final class AddCardViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Add Card"
+        
+        bindViewModelInputs()
+    }
+}
+
+private extension AddCardViewController {
+    private func bindViewModelInputs() {
+        let outputs = datasource.viewModel(inputs)
+        
+        bag.insert(
+            outputs.cardSaved.drive(datasource.closeEvent.observer)
+        )
+    }
+    
+    private var inputs: AddCardViewModelInput {
+        AddCardViewModelInput(
+            cardName: viewSource.cardNameTextField.textField.rx.text.orEmpty.asObservable(),
+            cardNumber: viewSource.cardNumberTextField.textField.rx.text.orEmpty.asObservable(),
+            cardholderName: viewSource.cardholderTextField.textField.rx.text.orEmpty.asObservable(),
+            month: viewSource.expirationMonthTextField.textField.rx.text.orEmpty.asObservable(),
+            year: viewSource.expirationYearTextField.textField.rx.text.orEmpty.asObservable(),
+            cvv: viewSource.cvvTextField.textField.rx.text.orEmpty.asObservable(),
+            cardType: viewSource.selectedCardType,
+            saveButtonTapped: viewSource.saveButton.rx.tap.asObservable()
+        )
     }
 }

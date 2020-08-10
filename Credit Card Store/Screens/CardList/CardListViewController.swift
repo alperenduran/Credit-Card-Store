@@ -42,8 +42,6 @@ final class CardListViewController: UIViewController {
         
         navigationItem.title = "Cards"
         
-        navigationItem.rightBarButtonItem = viewSource.addButton
-        
         bindViewModelInputs()
     }
 }
@@ -102,16 +100,9 @@ extension Reactive where Base == CardListViewController {
                 expirationMonth: "11",
                 expirationYear: "2020",
                 cvv: "123",
-                cardType: .other
+                cardType: .visa
             )
             Current.keychain.addCard(card)
-        }
-    }
-    
-    var showAddCard: Binder<Void> {
-        Binder(base) { target, _ in
-            let controller = AddCardViewController()
-            target.show(controller, sender: nil)
         }
     }
 }

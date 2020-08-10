@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RxSwift
 
 final class AddCardView: UIView {
     
@@ -118,5 +119,22 @@ final class AddCardView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    var selectedCardType: Observable<CardType> {
+        let types: [CardType] = [
+            .amex,
+            .maestro,
+            .masterCard,
+            .visa,
+            .other
+        ]
+        
+        let index = cardTypePicker.rx.selectedSegmentIndex.asObservable()
+        
+        return index
+            .map { index -> CardType in
+                types[index]
+        }
     }
 }

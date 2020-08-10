@@ -12,14 +12,11 @@
 		AD00906924DE90E9004EB706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906824DE90E9004EB706 /* ViewController.swift */; };
 		AD00906E24DE90EA004EB706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD00906D24DE90EA004EB706 /* Assets.xcassets */; };
 		AD00907124DE90EA004EB706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */; };
-		AD00907A24DE933B004EB706 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD00907924DE933B004EB706 /* RxSwift */; };
-		AD00907C24DE933B004EB706 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AD00907B24DE933B004EB706 /* RxCocoa */; };
 		AD00908224DE938D004EB706 /* UILayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908124DE938D004EB706 /* UILayoutExtensions.swift */; };
 		AD00908A24DE9452004EB706 /* RxExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908924DE9452004EB706 /* RxExtensions.swift */; };
 		AD00908C24DE94EF004EB706 /* With.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908B24DE94EF004EB706 /* With.swift */; };
 		AD00908E24DE9519004EB706 /* UIStackViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908D24DE9519004EB706 /* UIStackViewExtensions.swift */; };
 		AD00909124DE955D004EB706 /* Environment.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909024DE955D004EB706 /* Environment.swift */; };
-		AD00909524DE959B004EB706 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD00909424DE959B004EB706 /* KeychainSwift */; };
 		AD00909724DE95AA004EB706 /* KeychainKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909624DE95AA004EB706 /* KeychainKey.swift */; };
 		AD00909924DE95F1004EB706 /* KeychainManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909824DE95F1004EB706 /* KeychainManager.swift */; };
 		AD00909B24DE9678004EB706 /* KeychainMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00909A24DE9678004EB706 /* KeychainMediator.swift */; };
@@ -51,6 +48,11 @@
 		AD53756124DF0978003C3609 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756024DF0978003C3609 /* AddCardViewModel.swift */; };
 		AD53756324DF0989003C3609 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756224DF0989003C3609 /* AddCardView.swift */; };
 		AD53756B24DF1254003C3609 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756A24DF1254003C3609 /* TextField.swift */; };
+		AD9973D124E192C10096C1F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D024E192C10096C1F4 /* RxSwift */; };
+		AD9973D324E192C10096C1F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D224E192C10096C1F4 /* RxCocoa */; };
+		AD9973D624E192D30096C1F4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D524E192D30096C1F4 /* KeychainSwift */; };
+		AD9973D824E193650096C1F4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9973D724E193650096C1F4 /* Navigator.swift */; };
+		AD9973DA24E194AA0096C1F4 /* AddCardNavigationDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9973D924E194AA0096C1F4 /* AddCardNavigationDatasource.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -97,6 +99,8 @@
 		AD53756024DF0978003C3609 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
 		AD53756224DF0989003C3609 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		AD53756A24DF1254003C3609 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		AD9973D724E193650096C1F4 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
+		AD9973D924E194AA0096C1F4 /* AddCardNavigationDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardNavigationDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -104,9 +108,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AD00909524DE959B004EB706 /* KeychainSwift in Frameworks */,
-				AD00907C24DE933B004EB706 /* RxCocoa in Frameworks */,
-				AD00907A24DE933B004EB706 /* RxSwift in Frameworks */,
+				AD9973D624E192D30096C1F4 /* KeychainSwift in Frameworks */,
+				AD9973D324E192C10096C1F4 /* RxCocoa in Frameworks */,
+				AD9973D124E192C10096C1F4 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -214,6 +218,7 @@
 			children = (
 				AD53755C24DF094E003C3609 /* AddCard */,
 				AD0090BD24DEB939004EB706 /* CardList */,
+				AD9973D724E193650096C1F4 /* Navigator.swift */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -270,6 +275,7 @@
 				AD53755E24DF096C003C3609 /* AddCardViewController.swift */,
 				AD53756024DF0978003C3609 /* AddCardViewModel.swift */,
 				AD53755D24DF095F003C3609 /* Views */,
+				AD9973D924E194AA0096C1F4 /* AddCardNavigationDatasource.swift */,
 			);
 			path = AddCard;
 			sourceTree = "<group>";
@@ -299,9 +305,9 @@
 			);
 			name = "Credit Card Store";
 			packageProductDependencies = (
-				AD00907924DE933B004EB706 /* RxSwift */,
-				AD00907B24DE933B004EB706 /* RxCocoa */,
-				AD00909424DE959B004EB706 /* KeychainSwift */,
+				AD9973D024E192C10096C1F4 /* RxSwift */,
+				AD9973D224E192C10096C1F4 /* RxCocoa */,
+				AD9973D524E192D30096C1F4 /* KeychainSwift */,
 			);
 			productName = "Credit Card Store";
 			productReference = AD00906124DE90E9004EB706 /* Credit Card Store.app */;
@@ -332,8 +338,8 @@
 			);
 			mainGroup = AD00905824DE90E9004EB706;
 			packageReferences = (
-				AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */,
-				AD00909324DE959B004EB706 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				AD9973CF24E192C10096C1F4 /* XCRemoteSwiftPackageReference "RxSwift" */,
+				AD9973D424E192D30096C1F4 /* XCRemoteSwiftPackageReference "keychain-swift" */,
 			);
 			productRefGroup = AD00906224DE90E9004EB706 /* Products */;
 			projectDirPath = "";
@@ -368,6 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD0090DD24DEC86C004EB706 /* UserDefaultsKey.swift in Sources */,
+				AD9973D824E193650096C1F4 /* Navigator.swift in Sources */,
 				AD00906924DE90E9004EB706 /* ViewController.swift in Sources */,
 				AD00909124DE955D004EB706 /* Environment.swift in Sources */,
 				AD53756B24DF1254003C3609 /* TextField.swift in Sources */,
@@ -381,6 +388,7 @@
 				AD53756324DF0989003C3609 /* AddCardView.swift in Sources */,
 				AD0090DB24DEC856004EB706 /* UserDefaultsManager.swift in Sources */,
 				AD0090C824DEB9AE004EB706 /* Card.swift in Sources */,
+				AD9973DA24E194AA0096C1F4 /* AddCardNavigationDatasource.swift in Sources */,
 				AD00906524DE90E9004EB706 /* AppDelegate.swift in Sources */,
 				AD0090D824DEC334004EB706 /* CardListCellDisplayDatasource.swift in Sources */,
 				AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */,
@@ -593,7 +601,7 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
-		AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+		AD9973CF24E192C10096C1F4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
 			requirement = {
@@ -601,7 +609,7 @@
 				minimumVersion = 5.1.1;
 			};
 		};
-		AD00909324DE959B004EB706 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
+		AD9973D424E192D30096C1F4 /* XCRemoteSwiftPackageReference "keychain-swift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/evgenyneu/keychain-swift";
 			requirement = {
@@ -612,19 +620,19 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
-		AD00907924DE933B004EB706 /* RxSwift */ = {
+		AD9973D024E192C10096C1F4 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = AD9973CF24E192C10096C1F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxSwift;
 		};
-		AD00907B24DE933B004EB706 /* RxCocoa */ = {
+		AD9973D224E192C10096C1F4 /* RxCocoa */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AD00907824DE933B004EB706 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			package = AD9973CF24E192C10096C1F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
 			productName = RxCocoa;
 		};
-		AD00909424DE959B004EB706 /* KeychainSwift */ = {
+		AD9973D524E192D30096C1F4 /* KeychainSwift */ = {
 			isa = XCSwiftPackageProductDependency;
-			package = AD00909324DE959B004EB706 /* XCRemoteSwiftPackageReference "keychain-swift" */;
+			package = AD9973D424E192D30096C1F4 /* XCRemoteSwiftPackageReference "keychain-swift" */;
 			productName = KeychainSwift;
 		};
 /* End XCSwiftPackageProductDependency section */

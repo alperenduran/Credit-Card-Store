@@ -17,7 +17,6 @@ struct KeychainManager {
     init() {
         instance = KeychainSwift()
         instance.synchronizable = true
-        instance.clear()
         let cards = try? instance.getObject(forKey: UserDefaultsKey.savedCards.rawValue, castTo: [Card].self)
         if let cards = cards {
             cardsObserver.onNext(cards)
@@ -51,7 +50,7 @@ extension KeychainManager {
     
     func addCard(card: Card) {
         var cards = getCards()
-        cards.append(card)
+        cards.insert(card, at: 0)
         cardsObserver.onNext(cards)
         try! instance.setObject(cards, forKey: UserDefaultsKey.savedCards.rawValue)
     }

@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import RxSwift
+import RxCocoa
 
 // MARK: - Child View Controller
 extension UIViewController {
@@ -16,5 +18,32 @@ extension UIViewController {
         viewHandler(controller.view)
         controller.didMove(toParent: self)
     }
+    
+    func showAlert(with title: String? = "Success",
+                   message: String?,
+                   buttonTitle: String? = "Tamam"
+    ) -> Single<Void> {
+        return Single.create(subscribe: { [weak self] single -> Disposable in
+            guard let self = self else { return Disposables.create() }
+
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            let okButtonAction = UIAlertAction(title: buttonTitle, style: .default) { _ in
+                single(.success(()))
+            }
+            alertController.addAction(okButtonAction)
+
+            self.present(alertController, animated: true, completion: nil)
+            return Disposables.create {
+                alertController.dismiss(animated: false, completion: nil)
+            }
+        })
+    }
 }
 
+extension Reactive where Base: UIViewController {
+    var showAlert: Binder<String> {
+        Binder(base) { target, message in
+            _ = target.showAlert(message: message).subscribe()
+        }
+    }
+}
