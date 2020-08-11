@@ -14,6 +14,7 @@ struct CardListViewModelInput {
     var cards: Observable<[Card]> = .never()
     var cardNumberTapped: Observable<IndexPath> = .never()
     var cardSelected: Observable<IndexPath> = .never()
+    var deleteCard: Observable<IndexPath> = .never()
     var addButtonTapped: Observable<Void> = .never()
 }
 
@@ -21,6 +22,7 @@ struct CardListViewModelOutput {
     let datasource: Driver<[CardListCellDisplayDatasource]>
     let copyCardNumber: Driver<String>
     let openCardDetails: Driver<Card>
+    let cardDeleted: Driver<Void>
     let openAddScreen: Driver<Void>
 }
 
@@ -33,6 +35,7 @@ func cardListViewModel(
         datasource: getDatasourceOutput(inputs),
         copyCardNumber: getCopyCardOutput(inputs),
         openCardDetails: getOpenCardOutput(inputs),
+        cardDeleted: getCardDeleted(inputs),
         openAddScreen: getOpenAddScreenOutput(inputs)
     )
 }
@@ -69,6 +72,15 @@ private func getOpenCardOutput(
         return card
     }
     .asDriver(onErrorDriveWith: .never())
+}
+
+private func getCardDeleted(
+    _ inputs: CardListViewModelInput
+) -> Driver<Void> {
+    inputs.deleteCard
+        .map { $0.row }
+        .map(Current.keychain.removeCard)
+        .asDriver(onErrorDriveWith: .never())
 }
 
 private func getOpenAddScreenOutput(

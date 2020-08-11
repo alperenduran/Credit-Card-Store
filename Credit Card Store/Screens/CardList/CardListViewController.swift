@@ -20,6 +20,7 @@ final class CardListViewController: UIViewController {
     let bag = DisposeBag()
     let viewModel: CardListViewModel
     fileprivate var datasource: [CardListCellDisplayDatasource] = []
+    let (deleteObserver, deleteObservable) = Observable<IndexPath>.pipe()
     
     // MARK: - Initialization
     init(with viewModel: @escaping CardListViewModel) {
@@ -63,13 +64,15 @@ extension CardListViewController: UITableViewDataSource {
     }
 }
 
+
 private extension CardListViewController {
     private func bindViewModelInputs() {
         let outputs = viewModel(inputs)
         
         bag.insert(
             outputs.datasource.drive(rx.bindDatasource),
-            outputs.openAddScreen.drive(rx.showAddCard)
+            outputs.openAddScreen.drive(rx.showAddCard),
+            outputs.cardDeleted.drive()
         )
     }
     
@@ -78,6 +81,7 @@ private extension CardListViewController {
             cards: Current.keychain.cardsEvent,
             cardNumberTapped: .never(),
             cardSelected: .never(),
+            deleteCard: viewSource.tableView.rx.itemDeleted.asObservable(),
             addButtonTapped: viewSource.addButton.rx.tap.asObservable()
         )
     }

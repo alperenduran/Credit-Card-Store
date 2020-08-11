@@ -17,4 +17,5 @@ struct KeychainMediator {
     var addCard = Environment.keychainManager.addCard(card:)
     var getCards = Environment.keychainManager.getCards
     var cardsEvent = Environment.keychainManager.cardsObservable
+    var removeCard = Environment.keychainManager.deleteCard(at:)
 }

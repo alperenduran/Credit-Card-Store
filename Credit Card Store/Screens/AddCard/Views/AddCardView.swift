@@ -16,7 +16,6 @@ final class AddCardView: UIView {
         $0.textField.placeholder = "Give a name to your card"
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
-        $0.textField.returnKeyType = .next
     }
     
     private(set) lazy var cardNumberTextField = with(TextField(maxCharacters: 16)) {
@@ -24,14 +23,12 @@ final class AddCardView: UIView {
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
-        $0.textField.returnKeyType = .next
     }
     
     private(set) lazy var cardholderTextField = with(TextField(maxCharacters: 40)) {
         $0.textField.placeholder = "Cardholder's name"
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
-        $0.textField.returnKeyType = .next
     }
     
     private(set) lazy var expirationMonthTextField = with(TextField(maxCharacters: 2)) {
@@ -39,7 +36,6 @@ final class AddCardView: UIView {
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
-        $0.textField.returnKeyType = .next
     }
     
     private(set) lazy var expirationYearTextField = with(TextField(maxCharacters: 2)) {
@@ -47,7 +43,6 @@ final class AddCardView: UIView {
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
-        $0.textField.returnKeyType = .next
     }
     
     private(set) lazy var cvvTextField = with(TextField(maxCharacters: 3)) {
@@ -55,7 +50,6 @@ final class AddCardView: UIView {
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
-        $0.textField.returnKeyType = .next
     }
     
     private(set) lazy var cardTypePicker = with(UISegmentedControl()) { picker in

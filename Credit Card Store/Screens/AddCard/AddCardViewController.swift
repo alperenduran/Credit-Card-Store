@@ -63,3 +63,9 @@ private extension AddCardViewController {
         )
     }
 }
+
+extension AddCardViewController: UITextFieldDelegate {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
+        true
+    }
+}

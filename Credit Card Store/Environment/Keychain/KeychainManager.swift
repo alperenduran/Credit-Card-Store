@@ -62,4 +62,11 @@ extension KeychainManager {
         }
         return cards ?? []
     }
+    
+    func deleteCard(at index: Int) {
+        var cards = getCards()
+        cards.remove(at: index)
+        cardsObserver.onNext(cards)
+        try! instance.setObject(cards, forKey: UserDefaultsKey.savedCards.rawValue)
+    }
 }
