@@ -90,6 +90,7 @@ private extension CardListViewController {
 extension Reactive where Base == CardListViewController {
     var bindDatasource: Binder<[CardListCellDisplayDatasource]> {
         Binder(base) { target, datasource in
+            target.viewSource.backgroundView.isHidden = !datasource.isEmpty
             target.datasource = datasource
             target.viewSource.tableView.reloadData()
         }

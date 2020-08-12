@@ -48,6 +48,7 @@
 		AD53756124DF0978003C3609 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756024DF0978003C3609 /* AddCardViewModel.swift */; };
 		AD53756324DF0989003C3609 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756224DF0989003C3609 /* AddCardView.swift */; };
 		AD53756B24DF1254003C3609 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756A24DF1254003C3609 /* TextField.swift */; };
+		AD7D524A24E2ACDC00A3B1D2 /* CardListEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */; };
 		AD9973D124E192C10096C1F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D024E192C10096C1F4 /* RxSwift */; };
 		AD9973D324E192C10096C1F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D224E192C10096C1F4 /* RxCocoa */; };
 		AD9973D624E192D30096C1F4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D524E192D30096C1F4 /* KeychainSwift */; };
@@ -99,6 +100,7 @@
 		AD53756024DF0978003C3609 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
 		AD53756224DF0989003C3609 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		AD53756A24DF1254003C3609 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListEmptyStateView.swift; sourceTree = "<group>"; };
 		AD9973D724E193650096C1F4 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		AD9973D924E194AA0096C1F4 /* AddCardNavigationDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardNavigationDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -247,6 +249,7 @@
 			isa = PBXGroup;
 			children = (
 				AD0090E024DED187004EB706 /* CardListView.swift */,
+				AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -374,6 +377,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD0090DD24DEC86C004EB706 /* UserDefaultsKey.swift in Sources */,
+				AD7D524A24E2ACDC00A3B1D2 /* CardListEmptyStateView.swift in Sources */,
 				AD9973D824E193650096C1F4 /* Navigator.swift in Sources */,
 				AD00906924DE90E9004EB706 /* ViewController.swift in Sources */,
 				AD00909124DE955D004EB706 /* Environment.swift in Sources */,

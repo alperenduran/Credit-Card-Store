@@ -11,7 +11,10 @@ import RxSwift
 
 final class TextField: UIView {
     
-    lazy var textField = UITextField()
+    lazy var textField = with(UITextField()) {
+        $0.font = .font(type: .bold, size: 14.0)
+        $0.textColor = .appLabelColor
+    }
     var bag: DisposeBag
     
     init(maxCharacters: Int) {

@@ -67,6 +67,15 @@ final class AddCardView: UIView {
                 animated: false
             )
         }
+        picker.tintColor = .appLabelColor
+        picker.backgroundColor = .appLabelColor
+        picker.selectedSegmentTintColor = .appBgColor
+        let titleTextAttributes = [
+            NSAttributedString.Key.foregroundColor: UIColor.white,
+            NSAttributedString.Key.font: UIFont.font(type: .bold, size: 12)
+        ]
+        picker.setTitleTextAttributes(titleTextAttributes, for: .normal)
+        picker.setTitleTextAttributes(titleTextAttributes, for: .selected)
         
         picker.selectedSegmentIndex = 0
     }
@@ -83,7 +92,8 @@ final class AddCardView: UIView {
     private(set) lazy var saveButton = with(UIButton(type: .custom)) {
         $0.setTitle("Save", for: .normal)
         $0.backgroundColor = .appBgColor
-        $0.titleLabel?.textColor = .appLabelColor
+        $0.setTitleColor(.appLabelColor, for: .normal)
+        $0.titleLabel?.font = .font(type: .bold, size: 22)
         [
             $0.alignHeight(50)
         ].activate()
