@@ -46,7 +46,8 @@ private extension AddCardViewController {
         let outputs = datasource.viewModel(inputs)
         
         bag.insert(
-            outputs.cardSaved.drive(datasource.closeEvent.observer)
+            outputs.cardSaved.drive(datasource.closeEvent.observer),
+            outputs.error.drive(rx.displayError)
         )
     }
     

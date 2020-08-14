@@ -56,7 +56,10 @@ extension KeychainManager {
     }
     
     func getCards() -> [Card] {
-        let cards = try? instance.getObject(forKey: UserDefaultsKey.savedCards.rawValue, castTo: [Card].self)
+        let cards = try? instance.getObject(
+            forKey: UserDefaultsKey.savedCards.rawValue,
+            castTo: [Card].self
+        )
         if let cards = cards {
             cardsObserver.onNext(cards)
         }
@@ -67,6 +70,9 @@ extension KeychainManager {
         var cards = getCards()
         cards.remove(at: index)
         cardsObserver.onNext(cards)
-        try! instance.setObject(cards, forKey: UserDefaultsKey.savedCards.rawValue)
+        try! instance.setObject(
+            cards,
+            forKey: UserDefaultsKey.savedCards.rawValue
+        )
     }
 }

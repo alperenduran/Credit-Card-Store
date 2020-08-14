@@ -38,12 +38,32 @@ extension UIViewController {
             }
         })
     }
+    
+    func showErrorAlert(_ errorObject: ErrorObject) {
+        let message = errorObject.description
+
+        let alertController = UIAlertController(
+            title: errorObject.title,
+            message: message,
+            preferredStyle: .alert
+        )
+
+        alertController.addAction(UIAlertAction(title: "OK", style: .default))
+
+        self.present(alertController, animated: true, completion: nil)
+    }
 }
 
 extension Reactive where Base: UIViewController {
     var showAlert: Binder<String> {
         Binder(base) { target, message in
             _ = target.showAlert(message: message).subscribe()
+        }
+    }
+    
+    var displayError: Binder<ErrorObject> {
+        Binder(base) { (target, error) in
+            target.showErrorAlert(error)
         }
     }
 }

@@ -23,7 +23,7 @@ struct AddCardViewModelInput {
 
 struct AddCardViewModelOutput {
     let cardSaved: Driver<Void>
-    let error: Driver<Error>
+    let error: Driver<ErrorObject>
 }
 
 typealias AddCardViewModel = (AddCardViewModelInput) -> AddCardViewModelOutput
@@ -31,29 +31,41 @@ typealias AddCardViewModel = (AddCardViewModelInput) -> AddCardViewModelOutput
 func addCardViewModel(
     _ inputs: AddCardViewModelInput
 ) -> AddCardViewModelOutput {
+    
+    let cardInputs = Observable
+        .combineLatest(
+            inputs.cardName,
+            inputs.cardNumber,
+            inputs.cardholderName,
+            inputs.month,
+            inputs.year,
+            inputs.cvv,
+            inputs.cardType
+        )
+        .map(createCard)
+    
+    let validationResult = inputs.saveButtonTapped
+        .withLatestFrom(cardInputs)
+        .flatMapLatest { validate($0).materialize() }
+    
+    let validationSuccess = validationResult
+        .elements()
+    
+    let validationError = validationResult
+        .errors()
+        .asDriver(onErrorDriveWith: .never())
+    
     return AddCardViewModelOutput(
-        cardSaved: getCardSavedOutput(inputs),
-        error: .never()
+        cardSaved: getCardSavedOutput(inputs, validationSuccess),
+        error: combineErrors(validationError)
     )
 }
 
 private func getCardSavedOutput(
-    _ inputs: AddCardViewModelInput
+    _ inputs: AddCardViewModelInput,
+    _ validatedCard: Observable<Card>
 ) -> Driver<Void> {
-    let cardInputs = Observable
-        .combineLatest(
-            inputs.cardName.filter { !$0.isEmpty },
-            inputs.cardNumber.filter { !$0.isEmpty },
-            inputs.cardholderName.filter { !$0.isEmpty },
-            inputs.month.filter { !$0.isEmpty },
-            inputs.year.filter { !$0.isEmpty },
-            inputs.cvv.filter { !$0.isEmpty },
-            inputs.cardType
-        )
-    
-    return inputs.saveButtonTapped
-        .withLatestFrom(cardInputs)
-        .map(createCard)
+    validatedCard
         .map(Current.keychain.addCard)
         .asDriver(onErrorDriveWith: .never())
 }
@@ -76,4 +88,70 @@ private func createCard(
         cvv: cvv,
         cardType: type
     )
+}
+
+// MARK: - Validation
+/// Validates all required input fields to make api call.
+private func validate(
+    _ card: Card
+) -> Observable<Card> {
+    let cardName = validateField(
+        value: card.name,
+        errorMessage: "Card name should not be empty."
+    )
+    let cardNumber = validateField(
+        value: card.cardNumber,
+        errorMessage: "Card number should not be empty."
+    )
+    let cardholder = validateField(
+        value: card.cardholderName,
+        errorMessage: "Cardholder should not be empty."
+    )
+    let month = validateField(
+        value: card.expirationMonth,
+        errorMessage: "Expiration month should not be empty."
+    )
+    let year = validateField(
+        value: card.expirationYear,
+        errorMessage: "Expiration year should not be empty."
+    )
+    let cvv = validateField(
+        value: card.cvv,
+        errorMessage: "CVV should not be empty."
+    )
+    let cardType = validateField(
+        value: card.cardType.rawValue,
+        errorMessage: "Card type should not be empty."
+    )
+    
+    
+    let inputs = [
+        cardName,
+        cardNumber,
+        cardholder,
+        month,
+        year,
+        cvv,
+        cardType
+    ]
+    
+    return Observable.combineLatest(inputs)
+        .map { $0.reduce(true, { $0 && $1 }) }
+        .filter { $0 }
+        .map { _ in card }
+}
+
+/// Validates given string is valid for the given test.
+private func validateField(
+    value: String,
+    errorMessage: String,
+    test: @escaping (String) -> Bool = Validations.isNotEmpty
+) -> Observable<Bool> {
+    Observable.just(value)
+        .map(Validator.validate(
+                errorMessage: errorMessage,
+                test: test
+            )
+        )
+        .map { _ in true }
 }

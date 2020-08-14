@@ -39,8 +39,10 @@ final class CardListView: UIView {
         var constraints = tableView.alignFitEdges()
         addButton.alignSize(width: 300, height: 50)
             .forEach { constraints.append($0) }
+
         backgroundView.alignFitEdges()
             .forEach { constraints.append($0) }
+        
         [
             addButton.centerX(in: self),
             addButton.alignBottom(to: self, offset: -25.0)

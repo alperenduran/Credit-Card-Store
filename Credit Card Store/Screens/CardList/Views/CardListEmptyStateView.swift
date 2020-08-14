@@ -13,37 +13,35 @@ final class CardListEmptyStateView: UIView {
     // MARK: - Properties
     private lazy var imageView = with(UIImageView()) {
         $0.image = UIImage(named: "emptyState")
-        $0.contentMode = .scaleAspectFit
+        $0.contentMode = .center
+        $0.setContentHuggingPriority(
+            .required,
+            for: .vertical
+        )
     }
     
     private lazy var label = with(UILabel()) {
         $0.text = "You don't have any card"
-        $0.font = .font(type: .black, size: 30)
+        $0.font = .font(type: .bold, size: 20)
         $0.textColor = .appLabelColor
         $0.numberOfLines = 0
+        $0.textAlignment = .center
     }
-//
-//    private lazy var stackView = vStack(
-//        distribution: .fill,
-//        alignment: .center
-//    )(imageView, label, UIView())
-//
+
+    private lazy var stackView = vStack(space: 20.0)(imageView, label, UIView())
+
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
         
-//        addSubview(stackView)
-//        var constraints = stackView.alignFitEdges()
-        addSubview(imageView)
-        addSubview(label)
-        [
-            imageView.alignTop(to: self),
-            imageView.alignLeading(to: self, offset: 15),
-            imageView.alignTrailing(to: self, offset: -15),
-            label.alignLeading(to: self, offset: 15),
-            label.alignTrailing(to: self, offset: -15),
-            label.alignTop(to: imageView)
-        ].activate()
+        addSubview(stackView)
+        let constraints = stackView.alignEdges(
+            leading: 15,
+            trailing: -15,
+            top: 30,
+            bottom: -30
+        )
+        constraints.activate()
     }
     
     required init?(coder: NSCoder) {

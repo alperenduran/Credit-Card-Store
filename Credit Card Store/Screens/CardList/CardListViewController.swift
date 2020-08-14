@@ -20,7 +20,7 @@ final class CardListViewController: UIViewController {
     let bag = DisposeBag()
     let viewModel: CardListViewModel
     fileprivate var datasource: [CardListCellDisplayDatasource] = []
-    let (deleteObserver, deleteObservable) = Observable<IndexPath>.pipe()
+    let (copyObserver, copyObservable) = Observable<IndexPath>.pipe()
     
     // MARK: - Initialization
     init(with viewModel: @escaping CardListViewModel) {
@@ -72,15 +72,15 @@ private extension CardListViewController {
         bag.insert(
             outputs.datasource.drive(rx.bindDatasource),
             outputs.openAddScreen.drive(rx.showAddCard),
-            outputs.cardDeleted.drive()
+            outputs.cardDeleted.drive(),
+            outputs.copyCardNumber.drive(rx.copyCardNumber)
         )
     }
     
     private var inputs: CardListViewModelInput {
         CardListViewModelInput(
             cards: Current.keychain.cardsEvent,
-            cardNumberTapped: .never(),
-            cardSelected: .never(),
+            cardSelected: viewSource.tableView.rx.itemSelected.asObservable(),
             deleteCard: viewSource.tableView.rx.itemDeleted.asObservable(),
             addButtonTapped: viewSource.addButton.rx.tap.asObservable()
         )
@@ -91,23 +91,16 @@ extension Reactive where Base == CardListViewController {
     var bindDatasource: Binder<[CardListCellDisplayDatasource]> {
         Binder(base) { target, datasource in
             target.viewSource.backgroundView.isHidden = !datasource.isEmpty
+            target.viewSource.tableView.isHidden = datasource.isEmpty
             target.datasource = datasource
             target.viewSource.tableView.reloadData()
         }
     }
     
-    var addCard: Binder<Void> {
-        Binder(base) { target, _ in
-            let card = Card(
-                name: "My Garanti Card",
-                cardNumber: "1234567812345678",
-                cardholderName: "Hayrettin Alperen Duran",
-                expirationMonth: "11",
-                expirationYear: "2020",
-                cvv: "123",
-                cardType: .visa
-            )
-            Current.keychain.addCard(card)
+    var copyCardNumber: Binder<String> {
+        Binder(base) { target, number in
+            let clipboard = UIPasteboard.general
+            clipboard.string = number
         }
     }
 }

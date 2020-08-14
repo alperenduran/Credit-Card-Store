@@ -9,6 +9,27 @@
 import RxSwift
 import RxCocoa
 
+extension ObservableType where Element: EventConvertible {
+
+    /**
+     Returns an observable sequence containing only next elements from its input
+     - seealso: [materialize operator on reactivex.io](http://reactivex.io/documentation/operators/materialize-dematerialize.html)
+     */
+    public func elements() -> Observable<Element.Element> {
+        return filter { $0.event.element != nil }
+            .map { $0.event.element! }
+    }
+
+    /**
+     Returns an observable sequence containing only error elements from its input
+     - seealso: [materialize operator on reactivex.io](http://reactivex.io/documentation/operators/materialize-dematerialize.html)
+     */
+    public func errors() -> Observable<Swift.Error> {
+        return filter { $0.event.error != nil }
+            .map { $0.event.error! }
+    }
+}
+
 extension Observable {
     static func pipe() -> (observer: AnyObserver<Element>, observable: Observable<Element>) {
         let subject = PublishSubject<Element>()
@@ -82,4 +103,11 @@ extension Observable {
 
         return stream1.amb(stream2)
     }
+}
+
+func combineErrors(_ errors: Driver<Error>...) -> Driver<ErrorObject> {
+    return Observable
+        .merge(errors.map { $0.asObservable() })
+        .map(ErrorHandlerStruct.handle)
+        .asDriver(onErrorDriveWith: .never())
 }

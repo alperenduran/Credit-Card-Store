@@ -12,7 +12,6 @@ import Foundation
 
 struct CardListViewModelInput {
     var cards: Observable<[Card]> = .never()
-    var cardNumberTapped: Observable<IndexPath> = .never()
     var cardSelected: Observable<IndexPath> = .never()
     var deleteCard: Observable<IndexPath> = .never()
     var addButtonTapped: Observable<Void> = .never()
@@ -21,7 +20,6 @@ struct CardListViewModelInput {
 struct CardListViewModelOutput {
     let datasource: Driver<[CardListCellDisplayDatasource]>
     let copyCardNumber: Driver<String>
-    let openCardDetails: Driver<Card>
     let cardDeleted: Driver<Void>
     let openAddScreen: Driver<Void>
 }
@@ -34,7 +32,6 @@ func cardListViewModel(
     return CardListViewModelOutput(
         datasource: getDatasourceOutput(inputs),
         copyCardNumber: getCopyCardOutput(inputs),
-        openCardDetails: getOpenCardOutput(inputs),
         cardDeleted: getCardDeleted(inputs),
         openAddScreen: getOpenAddScreenOutput(inputs)
     )
@@ -51,7 +48,7 @@ private func getDatasourceOutput(
 private func getCopyCardOutput(
     _ inputs: CardListViewModelInput
 ) -> Driver<String> {
-    inputs.cardNumberTapped
+    inputs.cardSelected
         .withLatestFrom(inputs.cards) { ($0, $1)}
         .map { indexPath, cards -> String in
             let index = indexPath.row
@@ -59,19 +56,6 @@ private func getCopyCardOutput(
             return card.cardNumber
         }
         .asDriver(onErrorDriveWith: .never())
-}
-
-private func getOpenCardOutput(
-    _ inputs: CardListViewModelInput
-) -> Driver<Card> {
-    inputs.cardNumberTapped
-    .withLatestFrom(inputs.cards) { ($0, $1)}
-    .map { indexPath, cards -> Card in
-        let index = indexPath.row
-        let card = cards[index]
-        return card
-    }
-    .asDriver(onErrorDriveWith: .never())
 }
 
 private func getCardDeleted(

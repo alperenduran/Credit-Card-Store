@@ -16,7 +16,7 @@ final class CardListCell: UITableViewCell {
         $0.layer.cornerRadius = 16.0
     }
     
-    private lazy var cardNumberLabel = with(UILabel()) {
+    private(set) lazy var cardNumberLabel = with(UILabel()) {
         $0.font = .font(type: .bold, size: 20.0)
         $0.numberOfLines = 1
         $0.textColor = .white

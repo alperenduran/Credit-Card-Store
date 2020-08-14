@@ -94,9 +94,6 @@ final class AddCardView: UIView {
         $0.backgroundColor = .appBgColor
         $0.setTitleColor(.appLabelColor, for: .normal)
         $0.titleLabel?.font = .font(type: .bold, size: 22)
-        [
-            $0.alignHeight(50)
-        ].activate()
         $0.layer.borderWidth = 2
         $0.layer.borderColor = UIColor.appLabelColor.cgColor
         $0.layer.cornerRadius = 10
@@ -118,7 +115,11 @@ final class AddCardView: UIView {
         
         backgroundColor = .systemBackground
         addSubview(baseStackView)
-        baseStackView.alignFitEdges(insetedBy: 10).activate()
+        var constraints = baseStackView.alignFitEdges(insetedBy: 10)
+        [
+            saveButton.alignHeight(50)
+        ].forEach { constraints.append($0) }
+        constraints.activate()
     }
     
     required init?(coder: NSCoder) {

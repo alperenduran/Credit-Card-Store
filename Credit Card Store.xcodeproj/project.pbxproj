@@ -49,6 +49,8 @@
 		AD53756324DF0989003C3609 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756224DF0989003C3609 /* AddCardView.swift */; };
 		AD53756B24DF1254003C3609 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756A24DF1254003C3609 /* TextField.swift */; };
 		AD7D524A24E2ACDC00A3B1D2 /* CardListEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */; };
+		AD8C4D2C24E6985C007F00A3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2B24E6985C007F00A3 /* Validator.swift */; };
+		AD8C4D2E24E699E3007F00A3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */; };
 		AD9973D124E192C10096C1F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D024E192C10096C1F4 /* RxSwift */; };
 		AD9973D324E192C10096C1F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D224E192C10096C1F4 /* RxCocoa */; };
 		AD9973D624E192D30096C1F4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D524E192D30096C1F4 /* KeychainSwift */; };
@@ -101,6 +103,8 @@
 		AD53756224DF0989003C3609 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		AD53756A24DF1254003C3609 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
 		AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListEmptyStateView.swift; sourceTree = "<group>"; };
+		AD8C4D2B24E6985C007F00A3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
+		AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
 		AD9973D724E193650096C1F4 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		AD9973D924E194AA0096C1F4 /* AddCardNavigationDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardNavigationDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -169,6 +173,8 @@
 				AD0090A024DE99DD004EB706 /* UIViewExtensions.swift */,
 				AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */,
 				AD00908B24DE94EF004EB706 /* With.swift */,
+				AD8C4D2B24E6985C007F00A3 /* Validator.swift */,
+				AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -391,8 +397,10 @@
 				AD0090C524DEB98D004EB706 /* CardListViewController.swift in Sources */,
 				AD53756324DF0989003C3609 /* AddCardView.swift in Sources */,
 				AD0090DB24DEC856004EB706 /* UserDefaultsManager.swift in Sources */,
+				AD8C4D2C24E6985C007F00A3 /* Validator.swift in Sources */,
 				AD0090C824DEB9AE004EB706 /* Card.swift in Sources */,
 				AD9973DA24E194AA0096C1F4 /* AddCardNavigationDatasource.swift in Sources */,
+				AD8C4D2E24E699E3007F00A3 /* StringExtensions.swift in Sources */,
 				AD00906524DE90E9004EB706 /* AppDelegate.swift in Sources */,
 				AD0090D824DEC334004EB706 /* CardListCellDisplayDatasource.swift in Sources */,
 				AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */,
