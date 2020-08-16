@@ -17,7 +17,6 @@ struct AddCardViewModelInput {
     var month: Observable<String> = .never()
     var year: Observable<String> = .never()
     var cvv: Observable<String> = .never()
-    var cardType: Observable<CardType> = .never()
     var saveButtonTapped: Observable<Void> = .never()
 }
 
@@ -39,8 +38,7 @@ func addCardViewModel(
             inputs.cardholderName,
             inputs.month,
             inputs.year,
-            inputs.cvv,
-            inputs.cardType
+            inputs.cvv
         )
         .map(createCard)
     
@@ -76,8 +74,7 @@ private func createCard(
     holder: String,
     month: String,
     year: String,
-    cvv: String,
-    type: CardType
+    cvv: String
 ) -> Card {
     Card(
         name: name,
@@ -85,8 +82,7 @@ private func createCard(
         cardholderName: holder,
         expirationMonth: month,
         expirationYear: year,
-        cvv: cvv,
-        cardType: type
+        cvv: cvv
     )
 }
 
@@ -119,10 +115,6 @@ private func validate(
         value: card.cvv,
         errorMessage: "CVV should not be empty."
     )
-    let cardType = validateField(
-        value: card.cardType.rawValue,
-        errorMessage: "Card type should not be empty."
-    )
     
     
     let inputs = [
@@ -131,8 +123,7 @@ private func validate(
         cardholder,
         month,
         year,
-        cvv,
-        cardType
+        cvv
     ]
     
     return Observable.combineLatest(inputs)

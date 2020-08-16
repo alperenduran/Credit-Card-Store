@@ -19,7 +19,7 @@ final class NavigationController: UINavigationController, UIGestureRecognizerDel
     init(
         root: UIViewController,
         bgColor: UIColor = .appBgColor,
-        tintColor: UIColor = .appLabelColor,
+        tintColor: UIColor = .white,
         titleFont: UIFont = .font(type: .medium, size: 21.0)
     ) {
         
@@ -90,7 +90,7 @@ private extension NavigationController {
 private extension NavigationController {
     func setup(
         bgColor: UIColor = .appBgColor,
-        tintColor: UIColor = .appLabelColor,
+        tintColor: UIColor = .white,
         titleFont: UIFont = .font(type: .medium, size: 21.0)
     ) {
         

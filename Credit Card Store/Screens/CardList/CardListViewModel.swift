@@ -92,8 +92,7 @@ private func convertToDatasource(
                 cardNumber: formattedCardNumber,
                 cardholder: card.cardholderName,
                 expirationDate: expirationDate,
-                cvv: card.cvv,
-                cardType: card.cardType
+                cvv: card.cvv
         )
     }
 }

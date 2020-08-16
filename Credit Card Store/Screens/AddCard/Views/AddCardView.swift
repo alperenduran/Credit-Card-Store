@@ -12,72 +12,46 @@ import RxSwift
 final class AddCardView: UIView {
     
     // MARK: - Properties
-    private(set) lazy var cardNameTextField = with(TextField(maxCharacters: 20)) {
-        $0.textField.placeholder = "Give a name to your card"
+    private(set) lazy var cardNameTextField = with(TextField(maxCharacters: 20, name: "Card Name")) {
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
     }
     
-    private(set) lazy var cardNumberTextField = with(TextField(maxCharacters: 16)) {
-        $0.textField.placeholder = "Card number"
+    private(set) lazy var cardSkeletonView = with(UIView()) {
+        $0.backgroundColor = .appBlueColor
+        $0.layer.cornerRadius = 30.0
+    }
+    
+    private(set) lazy var cardNumberTextField = with(TextField(maxCharacters: 16, name: "Card Number")) {
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
     }
     
-    private(set) lazy var cardholderTextField = with(TextField(maxCharacters: 40)) {
-        $0.textField.placeholder = "Cardholder's name"
+    private(set) lazy var cardholderTextField = with(TextField(maxCharacters: 40, name: "Cardholder's Name")) {
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
     }
     
-    private(set) lazy var expirationMonthTextField = with(TextField(maxCharacters: 2)) {
+    private(set) lazy var expirationMonthTextField = with(TextField(maxCharacters: 2, name: "Month")) {
         $0.textField.placeholder = "MM"
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
     }
     
-    private(set) lazy var expirationYearTextField = with(TextField(maxCharacters: 2)) {
+    private(set) lazy var expirationYearTextField = with(TextField(maxCharacters: 2, name: "Year")) {
         $0.textField.placeholder = "YY"
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
     }
     
-    private(set) lazy var cvvTextField = with(TextField(maxCharacters: 3)) {
+    private(set) lazy var cvvTextField = with(TextField(maxCharacters: 3, name: "CVV")) {
         $0.textField.placeholder = "CVV"
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none
-    }
-    
-    private(set) lazy var cardTypePicker = with(UISegmentedControl()) { picker in
-        let cardTypes = [
-            "Other",
-            "Visa",
-            "Master",
-            "Maestro",
-            "Amex"
-        ]
-        cardTypes.forEach {
-            picker.insertSegment(
-                withTitle: $0,
-                at: 0,
-                animated: false
-            )
-        }
-        picker.tintColor = .appLabelColor
-        picker.backgroundColor = .appLabelColor
-        picker.selectedSegmentTintColor = .appBgColor
-        let titleTextAttributes = [
-            NSAttributedString.Key.foregroundColor: UIColor.white,
-            NSAttributedString.Key.font: UIFont.font(type: .bold, size: 12)
-        ]
-        picker.setTitleTextAttributes(titleTextAttributes, for: .normal)
-        picker.setTitleTextAttributes(titleTextAttributes, for: .selected)
-        
-        picker.selectedSegmentIndex = 0
     }
     
     private lazy var detailsStackView = hStack(
@@ -91,20 +65,18 @@ final class AddCardView: UIView {
     
     private(set) lazy var saveButton = with(UIButton(type: .custom)) {
         $0.setTitle("Save", for: .normal)
-        $0.backgroundColor = .appBgColor
-        $0.setTitleColor(.appLabelColor, for: .normal)
-        $0.titleLabel?.font = .font(type: .bold, size: 22)
-        $0.layer.borderWidth = 2
-        $0.layer.borderColor = UIColor.appLabelColor.cgColor
-        $0.layer.cornerRadius = 10
+        $0.backgroundColor = .lightishBlue
+        $0.setTitleColor(.white, for: .normal)
+        $0.titleLabel?.font = .font(type: .bold, size: 14.0)
+        $0.layer.cornerRadius = 15
     }
     
-    private lazy var baseStackView = vStack(space: 5.0)(
+    private lazy var baseStackView = vStack(space: 13.0)(
         cardNameTextField,
+        cardSkeletonView,
         cardNumberTextField,
         cardholderTextField,
         detailsStackView,
-        cardTypePicker,
         saveButton,
         UIView()
     )
@@ -115,31 +87,18 @@ final class AddCardView: UIView {
         
         backgroundColor = .systemBackground
         addSubview(baseStackView)
-        var constraints = baseStackView.alignFitEdges(insetedBy: 10)
+        var constraints = baseStackView.alignFitEdges(insetedBy: 25)
         [
-            saveButton.alignHeight(50)
+            saveButton.alignHeight(55),
+            cardSkeletonView.alignHeight(193.0),
+            cardSkeletonView.alighWidth(200.0)
         ].forEach { constraints.append($0) }
+        
+        
         constraints.activate()
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }
-    
-    var selectedCardType: Observable<CardType> {
-        let types: [CardType] = [
-            .amex,
-            .maestro,
-            .masterCard,
-            .visa,
-            .other
-        ]
-        
-        let index = cardTypePicker.rx.selectedSegmentIndex.asObservable()
-        
-        return index
-            .map { index -> CardType in
-                types[index]
-        }
     }
 }

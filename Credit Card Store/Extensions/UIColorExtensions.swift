@@ -9,7 +9,7 @@
 import UIKit
 
 extension UIColor {
-    static let appBgColor = UIColor(named: "AppBgColor")!
+    static let appBgColor = UIColor(named: "darkGrey")!
     static let appLabelColor = UIColor(named: "AppLabelColor")!
     static let appBlueColor = UIColor(named: "AppBlueColor")!
     static let appGrayColor = UIColor(named: "AppGrayColor")!
@@ -20,4 +20,8 @@ extension UIColor {
     static let maestroColor = UIColor(named: "MaestroColor")!
     static let amexColor = UIColor(named: "AmexColor")!
     static let otherCardColor = UIColor(named: "OtherCardColor")!
+    static let paleGray = UIColor(named: "paleGrey")!
+    static let lightGreyBlue = UIColor(named: "lightGreyBlue")!
+    static let lightishBlue = UIColor(named: "lightishBlue")!
+    static let darkGrey = UIColor(named: "darkGrey")!
 }

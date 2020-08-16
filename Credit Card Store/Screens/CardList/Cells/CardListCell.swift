@@ -120,8 +120,6 @@ extension CardListCell {
             target.cardholderLabel.text = datasource.cardholder
             target.expirationDateLabel.text = datasource.expirationDate
             target.cvvLabel.text = datasource.cvv
-            target.cardBaseView.backgroundColor = datasource.backgroundColor
-            target.cardTypeLogo.image = UIImage(named: datasource.cardTypeLogo)
         }
     }
 }

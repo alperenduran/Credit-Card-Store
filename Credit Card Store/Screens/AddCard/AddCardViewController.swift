@@ -13,7 +13,9 @@ import RxSwift
 final class AddCardViewController: UIViewController {
     
     // MARK: - Properties
-    lazy var viewSource = AddCardView()
+    lazy var viewSource = with(AddCardView()) {
+        $0.layer.cornerRadius = 30.0
+    }
     let bag = DisposeBag()
     let datasource: AddCardNavigationDatasource
     
@@ -59,7 +61,6 @@ private extension AddCardViewController {
             month: viewSource.expirationMonthTextField.textField.rx.text.orEmpty.asObservable(),
             year: viewSource.expirationYearTextField.textField.rx.text.orEmpty.asObservable(),
             cvv: viewSource.cvvTextField.textField.rx.text.orEmpty.asObservable(),
-            cardType: viewSource.selectedCardType,
             saveButtonTapped: viewSource.saveButton.rx.tap.asObservable()
         )
     }
