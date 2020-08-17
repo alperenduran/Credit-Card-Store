@@ -57,7 +57,7 @@ final class AddCardView: UIView {
     private lazy var detailsStackView = hStack(
         distribution: .fillEqually,
         space: 5
-        )(
+    )(
         expirationMonthTextField,
         expirationYearTextField,
         cvvTextField
@@ -83,6 +83,7 @@ final class AddCardView: UIView {
     private lazy var scrollView = with(UIScrollView()) {
         $0.alwaysBounceVertical = true
         $0.layer.cornerRadius = 30.0
+        $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         $0.backgroundColor = .white
     }
     
@@ -98,6 +99,7 @@ final class AddCardView: UIView {
         addSubview(scrollView)
         
         setup()
+        observeKeyboard()
     }
     
     required init?(coder: NSCoder) {
@@ -137,5 +139,21 @@ extension AddCardView {
                 .bind(to: $0.textField.rx.text)
                 .disposed(by: bag)
         }
+    }
+    
+    private func observeKeyboard() {
+        keyboardHelper.keyboardChange
+            .subscribe(onNext: { [scrollView] info in
+                let keyboardHeight: CGFloat = info.isShowing
+                    ? UIApplication.windowHeight / 3.0
+                    : 0
+                scrollView.contentInset = UIEdgeInsets(
+                    top: 0,
+                    left: 0,
+                    bottom: keyboardHeight,
+                    right: 0
+                )
+            })
+            .disposed(by: bag)
     }
 }

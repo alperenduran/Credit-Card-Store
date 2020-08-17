@@ -75,3 +75,30 @@ extension GestureProtocol where Self: UIView {
 }
 
 extension UIView: GestureProtocol {}
+
+// MARK: - Animations
+extension UIView {
+    func rotateInfinetly(duration: CFTimeInterval = 1.5) {
+        let animation = CAKeyframeAnimation(
+            keyPath: "transform.rotation.z"
+        )
+        
+        animation.duration = duration
+        animation.fillMode = .forwards
+        animation.repeatCount = .infinity
+        
+        let pi = Double.pi
+        animation.values = [
+            0,
+            pi / 2,
+            pi,
+            pi * 3 / 2,
+            pi * 2
+        ]
+        
+        layer.add(
+            animation,
+            forKey: "rotate"
+        )
+    }
+}

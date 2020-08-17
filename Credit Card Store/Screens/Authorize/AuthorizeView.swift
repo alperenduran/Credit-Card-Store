@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import RxCocoa
 
 final class AuthorizeView: UIView {
     
     // MARK: - Properties
-    private lazy var binaryImage = with(UIImageView()) {
+    private(set) lazy var binaryImage = with(UIImageView()) {
         $0.image = UIImage(named: "binary")
         $0.contentMode = .scaleAspectFit
     }
@@ -50,5 +51,13 @@ final class AuthorizeView: UIView {
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AuthorizeView {
+    var rotateInfinitely: Binder<Void> {
+        Binder(self) { target, _ in
+            target.binaryImage.rotateInfinetly()
+        }
     }
 }
