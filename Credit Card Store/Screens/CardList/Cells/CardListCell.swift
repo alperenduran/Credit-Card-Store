@@ -134,7 +134,7 @@ extension CardListCell {
             target.cardholderLabel.text = datasource.cardholder
             target.expirationDateLabel.text = datasource.expirationDate
             target.cvvLabel.text = datasource.cvv
-            target.cardBaseView.backgroundColor = datasource.color
+            target.cardBaseView.backgroundColor = .darkGreyBlue
         }
     }
 }

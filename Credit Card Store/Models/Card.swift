@@ -15,4 +15,8 @@ struct Card: Codable {
     let expirationMonth: String
     let expirationYear: String
     let cvv: String
+    
+    var secureCardNumber: String {
+        "••••   ••••   ••••   \(cardNumber.suffix(4))"
+    }
 }

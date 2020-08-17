@@ -80,7 +80,7 @@ private func convertToDatasource(
     cards
         .map { card -> CardListCellDisplayDatasource in
             let formattedCardNumber = card.cardNumber.replacingOccurrences(
-                of: "(\\d{4})(\\d{4})(\\d{4})(\\d+)",
+                of: "(\\d{4})(\\d{4})(\\d{4})(\\d{4})",
                 with: "$1 $2 $3 $4",
                 options: .regularExpression,
                 range: nil
@@ -89,7 +89,7 @@ private func convertToDatasource(
             
             return CardListCellDisplayDatasource(
                 name: card.name,
-                cardNumber: formattedCardNumber,
+                cardNumber: card.secureCardNumber,
                 cardholder: card.cardholderName,
                 expirationDate: expirationDate,
                 cvv: card.cvv

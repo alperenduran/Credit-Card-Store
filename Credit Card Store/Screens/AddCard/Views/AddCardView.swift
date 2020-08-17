@@ -54,7 +54,7 @@ final class AddCardView: UIView {
     }
     
     private(set) lazy var cvvTextField = with(TextField(maxCharacters: 3, name: "CVV")) {
-        $0.textField.placeholder = "CVV"
+        $0.textField.placeholder = "•••"
         $0.textField.keyboardType = .numberPad
         $0.textField.autocorrectionType = .no
         $0.textField.autocapitalizationType = .none

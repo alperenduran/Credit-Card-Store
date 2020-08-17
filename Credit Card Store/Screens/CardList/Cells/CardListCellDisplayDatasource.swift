@@ -15,10 +15,6 @@ struct CardListCellDisplayDatasource {
     let cardholder: String
     let expirationDate: String
     let cvv: String
-    
-    var color: UIColor {
-        getColor()
-    }
 }
 
 private func getColor() -> UIColor {
