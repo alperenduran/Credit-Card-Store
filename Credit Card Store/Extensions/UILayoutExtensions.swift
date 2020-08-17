@@ -184,7 +184,7 @@ extension UIView {
 // MARK: - Sizing
 extension UIView {
     @discardableResult
-    func alighWidth(_ constant: CGFloat) -> NSLayoutConstraint {
+    func alignWidth(_ constant: CGFloat) -> NSLayoutConstraint {
         sizeWith(widthAnchor, constant: constant)
     }
     

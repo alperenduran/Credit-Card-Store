@@ -71,29 +71,57 @@ final class AddCardView: UIView {
         $0.layer.cornerRadius = 15
     }
     
+    private lazy var saveButtonContainer = with(UIView()) {
+        $0.backgroundColor = .white
+        $0.addSubview(saveButton)
+    }
+    
     private lazy var baseStackView = vStack(space: 13.0)(
         cardNameTextField,
         cardSkeletonView,
         cardNumberTextField,
         cardholderTextField,
-        detailsStackView,
-        saveButton,
-        UIView()
+        detailsStackView
     )
+    
+    private lazy var scrollView = with(UIScrollView()) {
+        $0.alwaysBounceVertical = true
+        $0.layer.cornerRadius = 30.0
+        $0.backgroundColor = .white
+    }
     
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
         
-        backgroundColor = .systemBackground
-        addSubview(baseStackView)
-        var constraints = baseStackView.alignFitEdges(insetedBy: 25)
+        backgroundColor = .darkGrey
+        scrollView.addSubview(baseStackView)
+        addSubview(scrollView)
+        addSubview(saveButtonContainer)
+        
+        var constraints: [NSLayoutConstraint] = []
+        
         [
             saveButton.alignHeight(55),
             cardSkeletonView.alignHeight(193.0),
-            cardSkeletonView.alighWidth(200.0)
+            cardSkeletonView.alignWidth(200.0),
+            scrollView.alignTop(to: self,offset: 35),
+            scrollView.alignLeading(to: self),
+            scrollView.alignTrailing(to: self),
+            scrollView.alignBottom(to: self),
+            baseStackView.alignTop(to: scrollView, offset: 25),
+            baseStackView.alignLeading(to: scrollView, offset: 25),
+            baseStackView.alignTrailing(to: scrollView, offset: -25),
+            baseStackView.alignBottom(to: scrollView, offset: -25),
+            baseStackView.alignWidth(UIScreen.main.bounds.size.width - 50),
+            saveButton.alignTop(to: saveButtonContainer, offset: 10),
+            saveButton.alignLeading(to: saveButtonContainer, offset: 30),
+            saveButton.alignTrailing(to: saveButtonContainer,offset: -30),
+            saveButton.alignBottom(to: saveButtonContainer, offset: -10 + -UIApplication.safeAreaBottomInset),
+            saveButtonContainer.alignLeading(to: self),
+            saveButtonContainer.alignTrailing(to: self),
+            saveButtonContainer.alignBottom(to: self)
         ].forEach { constraints.append($0) }
-        
         
         constraints.activate()
     }

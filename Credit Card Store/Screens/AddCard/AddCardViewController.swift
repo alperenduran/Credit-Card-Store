@@ -13,9 +13,7 @@ import RxSwift
 final class AddCardViewController: UIViewController {
     
     // MARK: - Properties
-    lazy var viewSource = with(AddCardView()) {
-        $0.layer.cornerRadius = 30.0
-    }
+    lazy var viewSource = AddCardView()
     let bag = DisposeBag()
     let datasource: AddCardNavigationDatasource
     
@@ -38,6 +36,7 @@ final class AddCardViewController: UIViewController {
         super.viewDidLoad()
         
         navigationItem.title = "Add Card"
+        view.backgroundColor = .darkGrey
         
         bindViewModelInputs()
     }
@@ -48,7 +47,7 @@ private extension AddCardViewController {
         let outputs = datasource.viewModel(inputs)
         
         bag.insert(
-            outputs.cardSaved.drive(datasource.closeEvent.observer),
+            outputs.cardSaved.drive(),
             outputs.error.drive(rx.displayError)
         )
     }

@@ -82,7 +82,7 @@ private extension NavigationController {
     }
     
     func setRightBarButton(for controller: UIViewController?) {
-        controller?.navigationItem.rightBarButtonItem = closeBarButtonItem
+        controller?.navigationItem.leftBarButtonItem = closeBarButtonItem
     }
 }
 
@@ -115,7 +115,7 @@ private extension NavigationController {
     }
     
     var shouldAddCloseButton: Bool {
-        false
+        rootController is AddCardViewController
     }
     
     var closeBarButtonItem: UIBarButtonItem {

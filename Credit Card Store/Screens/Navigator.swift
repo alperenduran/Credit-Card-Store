@@ -15,16 +15,10 @@ extension Reactive where Base: UIViewController {
         Binder(base) { target, _ in
             let datasource = AddCardNavigationDatasource(viewModel: addCardViewModel)
             let controller = AddCardViewController(with: datasource)
+            let navigationController = NavigationController(root: controller)
             
-            
-            datasource.closeEvent.observable
-                .subscribe(onNext: { [weak target] in
-                    guard let target = target else { return }
-                    target.navigationController?.popViewController(animated: true)
-                })
-                .disposed(by: controller.bag)
-            
-            target.show(controller, sender: nil)
+            navigationController.modalPresentationStyle = .fullScreen
+            target.present(navigationController, animated: true)
         }
     }
 }

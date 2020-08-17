@@ -63,7 +63,7 @@ final class TextField: UIView {
         [
             container.alignHeight(55.0),
             label.alignLeading(to: container)
-        ]
+        ].forEach { constraints.append($0) }
         
         textField.alignFitEdges(insetedBy: 16.0)
             .forEach { constraints.append($0) }

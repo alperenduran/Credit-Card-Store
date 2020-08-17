@@ -103,7 +103,7 @@ private extension CardListCell {
             constraints.append($0)
         }
         [
-            cardTypeLogo.alighWidth(100.0),
+            cardTypeLogo.alignWidth(100.0),
             cardTypeLogo.alignTrailing(to: cardBaseView, offset: -10.0),
             cardTypeLogo.alignBottom(to: cardBaseView, offset: -10.0)
         ].forEach { constraints.append($0) }
