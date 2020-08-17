@@ -8,6 +8,7 @@
 
 import UIKit
 import RxSwift
+import RxCocoa
 
 final class AddCardView: UIView {
     
@@ -20,6 +21,11 @@ final class AddCardView: UIView {
     private(set) lazy var cardSkeletonView = with(UIView()) {
         $0.backgroundColor = .appBlueColor
         $0.layer.cornerRadius = 30.0
+    }
+    
+    private lazy var maskImage = with(UIImageView()) {
+        $0.image = UIImage(named: "mask")?.withTintColor(.black)
+        $0.alpha = 0.6
     }
     
     private(set) lazy var cardNumberTextField = with(TextField(maxCharacters: 16, name: "Card Number")) {
@@ -85,6 +91,7 @@ final class AddCardView: UIView {
         $0.layer.cornerRadius = 30.0
         $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         $0.backgroundColor = .white
+        $0.showsVerticalScrollIndicator = false
     }
     
     private(set) var bag: DisposeBag = .init()
@@ -111,6 +118,8 @@ extension AddCardView {
     func setup() {
         var constraints: [NSLayoutConstraint] = []
         
+        cardSkeletonView.addSubview(maskImage)
+        
         [
             saveButton.alignHeight(55),
             cardSkeletonView.alignHeight(193.0),
@@ -123,10 +132,16 @@ extension AddCardView {
             baseStackView.alignLeading(to: scrollView, offset: 25),
             baseStackView.alignTrailing(to: scrollView, offset: -25),
             baseStackView.alignBottom(to: scrollView, offset: -25),
-            baseStackView.alignWidth(UIScreen.main.bounds.size.width - 50)
+            baseStackView.alignWidth(UIScreen.main.bounds.size.width - 50),
+            maskImage.alignTrailing(to: cardSkeletonView, offset: 10),
+            maskImage.alignTop(to: cardSkeletonView),
+            maskImage.alignBottom(to: cardSkeletonView)
         ].forEach { constraints.append($0) }
         
         constraints.activate()
+        
+        cardSkeletonView.layer.masksToBounds = true
+        cardSkeletonView.layer.cornerRadius = 30.0
         
         [
             cardNumberTextField,

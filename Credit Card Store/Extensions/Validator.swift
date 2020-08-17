@@ -57,7 +57,7 @@ struct ErrorHandlerStruct {
         case let error as ErrorObject:
             return error
         default:
-            return .init(message: "Bir hata oluştu.")
+            return .init(message: "An error occured.")
         }
     }
 }

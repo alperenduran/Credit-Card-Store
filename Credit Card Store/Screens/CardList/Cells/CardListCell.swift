@@ -14,7 +14,6 @@ final class CardListCell: UITableViewCell {
     // MARK: - Properties
     private lazy var cardBaseView = with(UIView()) {
         $0.layer.cornerRadius = 30.0
-        $0.backgroundColor = .darkGreyBlue
     }
     
     private lazy var maskImage = with(UIImageView()) {
@@ -135,6 +134,7 @@ extension CardListCell {
             target.cardholderLabel.text = datasource.cardholder
             target.expirationDateLabel.text = datasource.expirationDate
             target.cvvLabel.text = datasource.cvv
+            target.cardBaseView.backgroundColor = datasource.color
         }
     }
 }

@@ -94,10 +94,10 @@ extension Reactive where Base == AuthorizeViewController {
     
     var goToApp: Binder<Void> {
         Binder(base) { target, _ in
-            target.viewSource.binaryImage.rotateInfinetly(duration: 2.0)
+            target.viewSource.binaryImage.rotateInfinetly(duration: 1)
             
             Observable.just(())
-                .delay(.seconds(2), scheduler: MainScheduler.instance)
+                .delay(.seconds(1), scheduler: MainScheduler.instance)
                 .map(Current.authorization.authorize)
                 .subscribe()
                 .disposed(by: target.bag)

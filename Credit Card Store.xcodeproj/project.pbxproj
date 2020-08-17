@@ -53,6 +53,9 @@
 		AD53756124DF0978003C3609 /* AddCardViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756024DF0978003C3609 /* AddCardViewModel.swift */; };
 		AD53756324DF0989003C3609 /* AddCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756224DF0989003C3609 /* AddCardView.swift */; };
 		AD53756B24DF1254003C3609 /* TextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53756A24DF1254003C3609 /* TextField.swift */; };
+		AD5D8A3D24EAD021006CC700 /* SuccessView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D8A3C24EAD021006CC700 /* SuccessView.swift */; };
+		AD5D8A3F24EAD02A006CC700 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D8A3E24EAD02A006CC700 /* SuccessViewController.swift */; };
+		AD5D8A4124EAD047006CC700 /* SuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D8A4024EAD047006CC700 /* SuccessViewModel.swift */; };
 		AD7D524A24E2ACDC00A3B1D2 /* CardListEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */; };
 		AD8C4D2C24E6985C007F00A3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2B24E6985C007F00A3 /* Validator.swift */; };
 		AD8C4D2E24E699E3007F00A3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */; };
@@ -112,6 +115,9 @@
 		AD53756024DF0978003C3609 /* AddCardViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewModel.swift; sourceTree = "<group>"; };
 		AD53756224DF0989003C3609 /* AddCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardView.swift; sourceTree = "<group>"; };
 		AD53756A24DF1254003C3609 /* TextField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TextField.swift; sourceTree = "<group>"; };
+		AD5D8A3C24EAD021006CC700 /* SuccessView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessView.swift; sourceTree = "<group>"; };
+		AD5D8A3E24EAD02A006CC700 /* SuccessViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewController.swift; sourceTree = "<group>"; };
+		AD5D8A4024EAD047006CC700 /* SuccessViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuccessViewModel.swift; sourceTree = "<group>"; };
 		AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListEmptyStateView.swift; sourceTree = "<group>"; };
 		AD8C4D2B24E6985C007F00A3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
@@ -161,6 +167,7 @@
 				AD00907224DE90EA004EB706 /* Info.plist */,
 				AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */,
 				AD0090C624DEB99E004EB706 /* Models */,
+				AD9973D724E193650096C1F4 /* Navigator.swift */,
 				AD00906624DE90E9004EB706 /* SceneDelegate.swift */,
 				AD0090B624DE9E22004EB706 /* Screens */,
 			);
@@ -235,10 +242,10 @@
 		AD0090B624DE9E22004EB706 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
-				AD45CEE124EA8076003231D1 /* Authorize */,
 				AD53755C24DF094E003C3609 /* AddCard */,
+				AD45CEE124EA8076003231D1 /* Authorize */,
 				AD0090BD24DEB939004EB706 /* CardList */,
-				AD9973D724E193650096C1F4 /* Navigator.swift */,
+				AD5D8A3B24EACFD8006CC700 /* Success */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -293,9 +300,9 @@
 		AD45CEE124EA8076003231D1 /* Authorize */ = {
 			isa = PBXGroup;
 			children = (
-				AD45CEE224EA8092003231D1 /* AuthorizeViewModel.swift */,
-				AD45CEE424EA809F003231D1 /* AuthorizeViewController.swift */,
 				AD45CEE624EA80A6003231D1 /* AuthorizeView.swift */,
+				AD45CEE424EA809F003231D1 /* AuthorizeViewController.swift */,
+				AD45CEE224EA8092003231D1 /* AuthorizeViewModel.swift */,
 			);
 			path = Authorize;
 			sourceTree = "<group>";
@@ -326,6 +333,16 @@
 				AD53756224DF0989003C3609 /* AddCardView.swift */,
 			);
 			path = Views;
+			sourceTree = "<group>";
+		};
+		AD5D8A3B24EACFD8006CC700 /* Success */ = {
+			isa = PBXGroup;
+			children = (
+				AD5D8A3C24EAD021006CC700 /* SuccessView.swift */,
+				AD5D8A3E24EAD02A006CC700 /* SuccessViewController.swift */,
+				AD5D8A4024EAD047006CC700 /* SuccessViewModel.swift */,
+			);
+			path = Success;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -429,6 +446,7 @@
 				AD0090C524DEB98D004EB706 /* CardListViewController.swift in Sources */,
 				AD53756324DF0989003C3609 /* AddCardView.swift in Sources */,
 				AD0090DB24DEC856004EB706 /* UserDefaultsManager.swift in Sources */,
+				AD5D8A4124EAD047006CC700 /* SuccessViewModel.swift in Sources */,
 				AD8C4D2C24E6985C007F00A3 /* Validator.swift in Sources */,
 				AD0090C824DEB9AE004EB706 /* Card.swift in Sources */,
 				AD9973DA24E194AA0096C1F4 /* AddCardNavigationDatasource.swift in Sources */,
@@ -441,6 +459,7 @@
 				AD45CEEC24EA843E003231D1 /* AuthorizationMediator.swift in Sources */,
 				AD00908A24DE9452004EB706 /* RxExtensions.swift in Sources */,
 				AD0090DF24DEC88F004EB706 /* UserDefaultsMediator.swift in Sources */,
+				AD5D8A3F24EAD02A006CC700 /* SuccessViewController.swift in Sources */,
 				AD0090A324DE9A14004EB706 /* UIViewControllerExtensions.swift in Sources */,
 				AD45CEE524EA809F003231D1 /* AuthorizeViewController.swift in Sources */,
 				AD0090CA24DEBB60004EB706 /* CardListCell.swift in Sources */,
@@ -453,6 +472,7 @@
 				AD00908E24DE9519004EB706 /* UIStackViewExtensions.swift in Sources */,
 				AD00906724DE90E9004EB706 /* SceneDelegate.swift in Sources */,
 				AD53756124DF0978003C3609 /* AddCardViewModel.swift in Sources */,
+				AD5D8A3D24EAD021006CC700 /* SuccessView.swift in Sources */,
 				AD00908224DE938D004EB706 /* UILayoutExtensions.swift in Sources */,
 				AD0090E124DED187004EB706 /* CardListView.swift in Sources */,
 				AD00909924DE95F1004EB706 /* KeychainManager.swift in Sources */,

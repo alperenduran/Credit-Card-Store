@@ -15,4 +15,22 @@ struct CardListCellDisplayDatasource {
     let cardholder: String
     let expirationDate: String
     let cvv: String
+    
+    var color: UIColor {
+        getColor()
+    }
+}
+
+private func getColor() -> UIColor {
+    let colors: [UIColor] = [
+        .lightishBlue,
+        .darkGreyBlue,
+        .pumpkinOrange,
+        .appBlackColor
+    ]
+    if let color = colors.randomElement() {
+        return color
+    } else {
+        return .appBlueColor
+    }
 }

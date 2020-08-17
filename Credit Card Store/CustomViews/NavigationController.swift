@@ -20,7 +20,7 @@ final class NavigationController: UINavigationController, UIGestureRecognizerDel
         root: UIViewController,
         bgColor: UIColor = .appBgColor,
         tintColor: UIColor = .white,
-        titleFont: UIFont = .font(type: .medium, size: 21.0)
+        titleFont: UIFont = .font(type: .medium, size: 18.0)
     ) {
         
         super.init(nibName: nil, bundle: nil)
@@ -91,7 +91,7 @@ private extension NavigationController {
     func setup(
         bgColor: UIColor = .appBgColor,
         tintColor: UIColor = .white,
-        titleFont: UIFont = .font(type: .medium, size: 21.0)
+        titleFont: UIFont = .font(type: .medium, size: 18.0)
     ) {
         
         navigationBar.barTintColor = bgColor

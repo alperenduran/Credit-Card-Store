@@ -33,12 +33,12 @@ func addCardViewModel(
     
     let cardInputs = Observable
         .combineLatest(
-            inputs.cardName,
-            inputs.cardNumber,
-            inputs.cardholderName,
-            inputs.month,
-            inputs.year,
-            inputs.cvv
+            inputs.cardName.startWith(""),
+            inputs.cardNumber.startWith(""),
+            inputs.cardholderName.startWith(""),
+            inputs.month.startWith(""),
+            inputs.year.startWith(""),
+            inputs.cvv.startWith("")
         )
         .map(createCard)
     
