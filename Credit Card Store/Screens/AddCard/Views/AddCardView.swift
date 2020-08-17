@@ -71,17 +71,13 @@ final class AddCardView: UIView {
         $0.layer.cornerRadius = 15
     }
     
-    private lazy var saveButtonContainer = with(UIView()) {
-        $0.backgroundColor = .white
-        $0.addSubview(saveButton)
-    }
-    
     private lazy var baseStackView = vStack(space: 13.0)(
         cardNameTextField,
         cardSkeletonView,
         cardNumberTextField,
         cardholderTextField,
-        detailsStackView
+        detailsStackView,
+        saveButton
     )
     
     private lazy var scrollView = with(UIScrollView()) {
@@ -90,6 +86,9 @@ final class AddCardView: UIView {
         $0.backgroundColor = .white
     }
     
+    private(set) var bag: DisposeBag = .init()
+    private lazy var keyboardHelper = KeyboardHelper()
+    
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
@@ -97,8 +96,17 @@ final class AddCardView: UIView {
         backgroundColor = .darkGrey
         scrollView.addSubview(baseStackView)
         addSubview(scrollView)
-        addSubview(saveButtonContainer)
         
+        setup()
+    }
+    
+    required init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+}
+
+extension AddCardView {
+    func setup() {
         var constraints: [NSLayoutConstraint] = []
         
         [
@@ -113,20 +121,21 @@ final class AddCardView: UIView {
             baseStackView.alignLeading(to: scrollView, offset: 25),
             baseStackView.alignTrailing(to: scrollView, offset: -25),
             baseStackView.alignBottom(to: scrollView, offset: -25),
-            baseStackView.alignWidth(UIScreen.main.bounds.size.width - 50),
-            saveButton.alignTop(to: saveButtonContainer, offset: 10),
-            saveButton.alignLeading(to: saveButtonContainer, offset: 30),
-            saveButton.alignTrailing(to: saveButtonContainer,offset: -30),
-            saveButton.alignBottom(to: saveButtonContainer, offset: -10 + -UIApplication.safeAreaBottomInset),
-            saveButtonContainer.alignLeading(to: self),
-            saveButtonContainer.alignTrailing(to: self),
-            saveButtonContainer.alignBottom(to: self)
+            baseStackView.alignWidth(UIScreen.main.bounds.size.width - 50)
         ].forEach { constraints.append($0) }
         
         constraints.activate()
-    }
-    
-    required init?(coder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
+        
+        [
+            cardNumberTextField,
+            expirationMonthTextField,
+            expirationYearTextField,
+            cvvTextField
+        ].forEach {
+            $0.textField.rx.text.orEmpty
+                .map { $0.removeNonNumerics() }
+                .bind(to: $0.textField.rx.text)
+                .disposed(by: bag)
+        }
     }
 }

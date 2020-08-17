@@ -13,19 +13,14 @@ final class CardListView: UIView {
     // MARK: - Properties
     private(set) lazy var tableView = with(UITableView()) {
         $0.register(CardListCell.self, forCellReuseIdentifier: CardListCell.identifier)
-        $0.backgroundColor = .clear
+        $0.backgroundColor = .appBgColor
         $0.separatorStyle = .none
     }
     
     private(set) lazy var backgroundView = CardListEmptyStateView()
     
     private(set) lazy var addButton = with(UIButton(type: .custom)) {
-        $0.setTitle("Add New Card", for: .normal)
-        $0.titleLabel?.font = .font(type: .bold, size: 20)
-        $0.setTitleColor(.appLabelColor, for: .normal)
-        $0.backgroundColor = .appBgColor
-        $0.layer.cornerRadius = 25
-        $0.makeShadow(opacity: 0.3, radius: 5)
+        $0.setBackgroundImage(UIImage(named: "addButton"), for: .normal)
     }
     
     // MARK: - Initialization
@@ -37,7 +32,7 @@ final class CardListView: UIView {
         addSubview(addButton)
         
         var constraints = tableView.alignFitEdges()
-        addButton.alignSize(width: 300, height: 50)
+        addButton.alignSize(width: 45, height: 45)
             .forEach { constraints.append($0) }
 
         backgroundView.alignFitEdges()
@@ -45,7 +40,7 @@ final class CardListView: UIView {
         
         [
             addButton.centerX(in: self),
-            addButton.alignBottom(to: self, offset: -25.0)
+            addButton.alignBottom(to: self, offset: -UIApplication.safeAreaBottomInset + -10)
         ].forEach { constraints.append($0) }
         constraints.activate()
     }

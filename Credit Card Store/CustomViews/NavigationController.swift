@@ -100,6 +100,7 @@ private extension NavigationController {
         
         let emptyImage = UIImage()
         navigationBar.shadowImage = emptyImage
+        navigationBar.barStyle = .black
         
         navigationBar.setBackgroundImage(
             emptyImage,

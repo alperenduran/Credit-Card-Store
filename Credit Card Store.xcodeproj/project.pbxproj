@@ -42,6 +42,7 @@
 		AD0090DF24DEC88F004EB706 /* UserDefaultsMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090DE24DEC88F004EB706 /* UserDefaultsMediator.swift */; };
 		AD0090E124DED187004EB706 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E024DED187004EB706 /* CardListView.swift */; };
 		AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */; };
+		AD45CEDD24EA63BC003231D1 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45CEDC24EA63BC003231D1 /* KeyboardHelper.swift */; };
 		AD53755924DEDEF6003C3609 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */; };
 		AD53755B24DEF434003C3609 /* KeychainExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755A24DEF434003C3609 /* KeychainExtensions.swift */; };
 		AD53755F24DF096C003C3609 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755E24DF096C003C3609 /* AddCardViewController.swift */; };
@@ -96,6 +97,7 @@
 		AD0090DE24DEC88F004EB706 /* UserDefaultsMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsMediator.swift; sourceTree = "<group>"; };
 		AD0090E024DED187004EB706 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
+		AD45CEDC24EA63BC003231D1 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
 		AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		AD53755A24DEF434003C3609 /* KeychainExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainExtensions.swift; sourceTree = "<group>"; };
 		AD53755E24DF096C003C3609 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
@@ -217,6 +219,7 @@
 			children = (
 				AD0090B424DE9B63004EB706 /* NavigationController.swift */,
 				AD53756A24DF1254003C3609 /* TextField.swift */,
+				AD45CEDC24EA63BC003231D1 /* KeyboardHelper.swift */,
 			);
 			path = CustomViews;
 			sourceTree = "<group>";
@@ -385,6 +388,7 @@
 				AD0090DD24DEC86C004EB706 /* UserDefaultsKey.swift in Sources */,
 				AD7D524A24E2ACDC00A3B1D2 /* CardListEmptyStateView.swift in Sources */,
 				AD9973D824E193650096C1F4 /* Navigator.swift in Sources */,
+				AD45CEDD24EA63BC003231D1 /* KeyboardHelper.swift in Sources */,
 				AD00906924DE90E9004EB706 /* ViewController.swift in Sources */,
 				AD00909124DE955D004EB706 /* Environment.swift in Sources */,
 				AD53756B24DF1254003C3609 /* TextField.swift in Sources */,

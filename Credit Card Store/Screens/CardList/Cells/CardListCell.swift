@@ -13,35 +13,41 @@ import RxCocoa
 final class CardListCell: UITableViewCell {
     // MARK: - Properties
     private lazy var cardBaseView = with(UIView()) {
-        $0.layer.cornerRadius = 16.0
+        $0.layer.cornerRadius = 30.0
+        $0.backgroundColor = .darkGreyBlue
+    }
+    
+    private lazy var maskImage = with(UIImageView()) {
+        $0.image = UIImage(named: "mask")?.withTintColor(.black)
+        $0.alpha = 0.6
     }
     
     private(set) lazy var cardNumberLabel = with(UILabel()) {
-        $0.font = .font(type: .bold, size: 20.0)
+        $0.font = .font(type: .bold, size: 18.0)
         $0.numberOfLines = 1
         $0.textColor = .white
     }
     
     private lazy var expirationDateLabel = with(UILabel()) {
-        $0.font = .font(type: .bold, size: 15.0)
+        $0.font = .font(type: .bold, size: 14.0)
         $0.numberOfLines = 1
         $0.textColor = .white
     }
     
     private lazy var cvvLabel = with(UILabel()) {
-        $0.font = .font(type: .bold, size: 15.0)
+        $0.font = .font(type: .bold, size: 14.0)
         $0.numberOfLines = 1
         $0.textColor = .white
     }
     
     private lazy var cardholderLabel = with(UILabel()) {
-        $0.font = .font(type: .bold, size: 15.0)
+        $0.font = .font(type: .bold, size: 14.0)
         $0.numberOfLines = 1
         $0.textColor = .white
     }
     
     private lazy var cardNameLabel = with(UILabel()) {
-        $0.font = .font(type: .bold, size: 15.0)
+        $0.font = .font(type: .bold, size: 14.0)
         $0.numberOfLines = 1
         $0.textColor = .white
     }
@@ -69,7 +75,7 @@ final class CardListCell: UITableViewCell {
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         
-        backgroundColor = .clear
+        backgroundColor = .appBgColor
         selectionStyle = .none
         
         arrangeViews()
@@ -90,22 +96,31 @@ final class CardListCell: UITableViewCell {
 
 private extension CardListCell {
     private func arrangeViews() {
+        cardBaseView.addSubview(maskImage)
         cardBaseView.addSubview(credentialStack)
         cardBaseView.addSubview(cardTypeLogo)
         addSubview(cardBaseView)
         
+        layer.masksToBounds = true
+        layer.cornerRadius = 30.0
+                
+        cardBaseView.clipsToBounds = true
         cardBaseView.makeShadow(opacity: 0.6, radius: 3)
         cardBaseView.makeShadow(opacity: 0.4, radius: 5)
         cardBaseView.makeShadow(opacity: 0.2, radius: 7)
         
-        var constraints = credentialStack.alignFitEdges(insetedBy: 20.0)
-        cardBaseView.alignFitEdges(insetedBy:10.0).forEach{
+        var constraints = credentialStack.alignFitEdges(insetedBy: 25.0)
+        cardBaseView.alignFitEdges(insetedBy:20.0).forEach{
             constraints.append($0)
         }
+                
         [
             cardTypeLogo.alignWidth(100.0),
             cardTypeLogo.alignTrailing(to: cardBaseView, offset: -10.0),
-            cardTypeLogo.alignBottom(to: cardBaseView, offset: -10.0)
+            cardTypeLogo.alignBottom(to: cardBaseView, offset: -10.0),
+            maskImage.alignTrailing(to: cardBaseView, offset: 10),
+            maskImage.alignTop(to: cardBaseView),
+            maskImage.alignBottom(to: cardBaseView)
         ].forEach { constraints.append($0) }
         
         constraints.activate()

@@ -35,13 +35,13 @@ final class CardListViewController: UIViewController {
     
     override func loadView() {
         view = viewSource
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .appBgColor
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        navigationItem.title = "Cards"
+        navigationItem.title = "Wallet"
         
         bindViewModelInputs()
     }
