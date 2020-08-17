@@ -40,7 +40,7 @@ final class CardListView: UIView {
         
         [
             addButton.centerX(in: self),
-            addButton.alignBottom(to: self, offset: -UIApplication.safeAreaBottomInset + -10)
+            addButton.alignBottom(to: self, offset: -UIApplication.safeAreaBottomInset + -15)
         ].forEach { constraints.append($0) }
         constraints.activate()
     }

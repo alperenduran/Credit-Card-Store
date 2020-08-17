@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		AD00906524DE90E9004EB706 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906424DE90E9004EB706 /* AppDelegate.swift */; };
 		AD00906724DE90E9004EB706 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906624DE90E9004EB706 /* SceneDelegate.swift */; };
-		AD00906924DE90E9004EB706 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00906824DE90E9004EB706 /* ViewController.swift */; };
 		AD00906E24DE90EA004EB706 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AD00906D24DE90EA004EB706 /* Assets.xcassets */; };
 		AD00907124DE90EA004EB706 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */; };
 		AD00908224DE938D004EB706 /* UILayoutExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD00908124DE938D004EB706 /* UILayoutExtensions.swift */; };
@@ -43,6 +42,11 @@
 		AD0090E124DED187004EB706 /* CardListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E024DED187004EB706 /* CardListView.swift */; };
 		AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */; };
 		AD45CEDD24EA63BC003231D1 /* KeyboardHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45CEDC24EA63BC003231D1 /* KeyboardHelper.swift */; };
+		AD45CEE324EA8092003231D1 /* AuthorizeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45CEE224EA8092003231D1 /* AuthorizeViewModel.swift */; };
+		AD45CEE524EA809F003231D1 /* AuthorizeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45CEE424EA809F003231D1 /* AuthorizeViewController.swift */; };
+		AD45CEE724EA80A6003231D1 /* AuthorizeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45CEE624EA80A6003231D1 /* AuthorizeView.swift */; };
+		AD45CEEA24EA8431003231D1 /* AuthorizationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45CEE924EA8431003231D1 /* AuthorizationManager.swift */; };
+		AD45CEEC24EA843E003231D1 /* AuthorizationMediator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD45CEEB24EA843E003231D1 /* AuthorizationMediator.swift */; };
 		AD53755924DEDEF6003C3609 /* UserDefaultsExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */; };
 		AD53755B24DEF434003C3609 /* KeychainExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755A24DEF434003C3609 /* KeychainExtensions.swift */; };
 		AD53755F24DF096C003C3609 /* AddCardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD53755E24DF096C003C3609 /* AddCardViewController.swift */; };
@@ -63,7 +67,6 @@
 		AD00906124DE90E9004EB706 /* Credit Card Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Credit Card Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		AD00906424DE90E9004EB706 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		AD00906624DE90E9004EB706 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		AD00906824DE90E9004EB706 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		AD00906D24DE90EA004EB706 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AD00907024DE90EA004EB706 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		AD00907224DE90EA004EB706 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -98,6 +101,11 @@
 		AD0090E024DED187004EB706 /* CardListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListView.swift; sourceTree = "<group>"; };
 		AD0090E224DED4EC004EB706 /* UITableViewExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UITableViewExtensions.swift; sourceTree = "<group>"; };
 		AD45CEDC24EA63BC003231D1 /* KeyboardHelper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardHelper.swift; sourceTree = "<group>"; };
+		AD45CEE224EA8092003231D1 /* AuthorizeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewModel.swift; sourceTree = "<group>"; };
+		AD45CEE424EA809F003231D1 /* AuthorizeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeViewController.swift; sourceTree = "<group>"; };
+		AD45CEE624EA80A6003231D1 /* AuthorizeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizeView.swift; sourceTree = "<group>"; };
+		AD45CEE924EA8431003231D1 /* AuthorizationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationManager.swift; sourceTree = "<group>"; };
+		AD45CEEB24EA843E003231D1 /* AuthorizationMediator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthorizationMediator.swift; sourceTree = "<group>"; };
 		AD53755824DEDEF5003C3609 /* UserDefaultsExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserDefaultsExtensions.swift; sourceTree = "<group>"; };
 		AD53755A24DEF434003C3609 /* KeychainExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeychainExtensions.swift; sourceTree = "<group>"; };
 		AD53755E24DF096C003C3609 /* AddCardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +163,6 @@
 				AD0090C624DEB99E004EB706 /* Models */,
 				AD00906624DE90E9004EB706 /* SceneDelegate.swift */,
 				AD0090B624DE9E22004EB706 /* Screens */,
-				AD00906824DE90E9004EB706 /* ViewController.swift */,
 			);
 			path = "Credit Card Store";
 			sourceTree = "<group>";
@@ -184,6 +191,7 @@
 		AD00908F24DE953B004EB706 /* Environment */ = {
 			isa = PBXGroup;
 			children = (
+				AD45CEE824EA841F003231D1 /* Authorization */,
 				AD00909024DE955D004EB706 /* Environment.swift */,
 				AD00909224DE9576004EB706 /* Keychain */,
 				AD0090D924DEC801004EB706 /* UserDefaults */,
@@ -227,6 +235,7 @@
 		AD0090B624DE9E22004EB706 /* Screens */ = {
 			isa = PBXGroup;
 			children = (
+				AD45CEE124EA8076003231D1 /* Authorize */,
 				AD53755C24DF094E003C3609 /* AddCard */,
 				AD0090BD24DEB939004EB706 /* CardList */,
 				AD9973D724E193650096C1F4 /* Navigator.swift */,
@@ -279,6 +288,25 @@
 				AD0090DE24DEC88F004EB706 /* UserDefaultsMediator.swift */,
 			);
 			path = UserDefaults;
+			sourceTree = "<group>";
+		};
+		AD45CEE124EA8076003231D1 /* Authorize */ = {
+			isa = PBXGroup;
+			children = (
+				AD45CEE224EA8092003231D1 /* AuthorizeViewModel.swift */,
+				AD45CEE424EA809F003231D1 /* AuthorizeViewController.swift */,
+				AD45CEE624EA80A6003231D1 /* AuthorizeView.swift */,
+			);
+			path = Authorize;
+			sourceTree = "<group>";
+		};
+		AD45CEE824EA841F003231D1 /* Authorization */ = {
+			isa = PBXGroup;
+			children = (
+				AD45CEE924EA8431003231D1 /* AuthorizationManager.swift */,
+				AD45CEEB24EA843E003231D1 /* AuthorizationMediator.swift */,
+			);
+			path = Authorization;
 			sourceTree = "<group>";
 		};
 		AD53755C24DF094E003C3609 /* AddCard */ = {
@@ -386,10 +414,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				AD0090DD24DEC86C004EB706 /* UserDefaultsKey.swift in Sources */,
+				AD45CEE724EA80A6003231D1 /* AuthorizeView.swift in Sources */,
 				AD7D524A24E2ACDC00A3B1D2 /* CardListEmptyStateView.swift in Sources */,
 				AD9973D824E193650096C1F4 /* Navigator.swift in Sources */,
 				AD45CEDD24EA63BC003231D1 /* KeyboardHelper.swift in Sources */,
-				AD00906924DE90E9004EB706 /* ViewController.swift in Sources */,
 				AD00909124DE955D004EB706 /* Environment.swift in Sources */,
 				AD53756B24DF1254003C3609 /* TextField.swift in Sources */,
 				AD00909F24DE98D7004EB706 /* UIColorExtensions.swift in Sources */,
@@ -408,16 +436,20 @@
 				AD00906524DE90E9004EB706 /* AppDelegate.swift in Sources */,
 				AD0090D824DEC334004EB706 /* CardListCellDisplayDatasource.swift in Sources */,
 				AD0090E324DED4EC004EB706 /* UITableViewExtensions.swift in Sources */,
+				AD45CEEA24EA8431003231D1 /* AuthorizationManager.swift in Sources */,
 				AD0090B224DE9A8B004EB706 /* UIFontExtensions.swift in Sources */,
+				AD45CEEC24EA843E003231D1 /* AuthorizationMediator.swift in Sources */,
 				AD00908A24DE9452004EB706 /* RxExtensions.swift in Sources */,
 				AD0090DF24DEC88F004EB706 /* UserDefaultsMediator.swift in Sources */,
 				AD0090A324DE9A14004EB706 /* UIViewControllerExtensions.swift in Sources */,
+				AD45CEE524EA809F003231D1 /* AuthorizeViewController.swift in Sources */,
 				AD0090CA24DEBB60004EB706 /* CardListCell.swift in Sources */,
 				AD53755924DEDEF6003C3609 /* UserDefaultsExtensions.swift in Sources */,
 				AD0090C324DEB97E004EB706 /* CardListViewModel.swift in Sources */,
 				AD00909D24DE984F004EB706 /* UIApplicationExtensions.swift in Sources */,
 				AD0090A124DE99DD004EB706 /* UIViewExtensions.swift in Sources */,
 				AD00909B24DE9678004EB706 /* KeychainMediator.swift in Sources */,
+				AD45CEE324EA8092003231D1 /* AuthorizeViewModel.swift in Sources */,
 				AD00908E24DE9519004EB706 /* UIStackViewExtensions.swift in Sources */,
 				AD00906724DE90E9004EB706 /* SceneDelegate.swift in Sources */,
 				AD53756124DF0978003C3609 /* AddCardViewModel.swift in Sources */,

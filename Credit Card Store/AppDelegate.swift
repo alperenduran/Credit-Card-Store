@@ -17,6 +17,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         Environment.keychainManager = KeychainManager()
         Environment.userDefaultsManager = UserDefaultsManager()
+        Environment.authorizationManager = AuthorizationManager()
         
         Current = Environment()
         return true

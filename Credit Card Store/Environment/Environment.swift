@@ -11,9 +11,11 @@ import Foundation
 struct Environment {
     var keychain = KeychainMediator()
     var userDefaults = UserDefaultsMediator()
+    var authorization = AuthorizationMediator()
     
     static var keychainManager: KeychainManager!
     static var userDefaultsManager: UserDefaultsManager!
+    static var authorizationManager: AuthorizationManager!
 }
 
 var Current: Environment!
