@@ -92,6 +92,7 @@ final class AddCardView: UIView {
         $0.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMinYCorner]
         $0.backgroundColor = .white
         $0.showsVerticalScrollIndicator = false
+        $0.keyboardDismissMode = .interactive
     }
     
     private(set) var bag: DisposeBag = .init()
