@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Hero
 
 final class SuccessView: UIView {
     
@@ -26,6 +27,7 @@ final class SuccessView: UIView {
         $0.backgroundColor = .lightishBlue
         $0.titleLabel?.font = .font(type: .extraBold, size: 14)
         $0.layer.cornerRadius = 15
+        $0.hero.id = "maviBt"
     }
     
     private lazy var stackView = vStack(alignment: .center, space: 20)(
