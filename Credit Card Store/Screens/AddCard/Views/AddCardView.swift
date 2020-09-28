@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Hero
 
 final class AddCardView: UIView {
     
@@ -75,6 +76,7 @@ final class AddCardView: UIView {
         $0.setTitleColor(.white, for: .normal)
         $0.titleLabel?.font = .font(type: .bold, size: 14.0)
         $0.layer.cornerRadius = 15
+        $0.hero.id = "maviBt"
     }
     
     private lazy var baseStackView = vStack(space: 13.0)(

@@ -9,6 +9,7 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import Hero
 
 final class SuccessViewController: UIViewController {
     
@@ -38,6 +39,8 @@ final class SuccessViewController: UIViewController {
         super.viewDidLoad()
                 
         bindViewModelInputs()
+        
+        self.hero.isEnabled = true
     }
 }
 

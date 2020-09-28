@@ -57,6 +57,7 @@
 		AD5D8A3F24EAD02A006CC700 /* SuccessViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D8A3E24EAD02A006CC700 /* SuccessViewController.swift */; };
 		AD5D8A4124EAD047006CC700 /* SuccessViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD5D8A4024EAD047006CC700 /* SuccessViewModel.swift */; };
 		AD7D524A24E2ACDC00A3B1D2 /* CardListEmptyStateView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */; };
+		AD858E8A251DE99E00BA2D36 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = AD858E89251DE99E00BA2D36 /* Hero */; };
 		AD8C4D2C24E6985C007F00A3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2B24E6985C007F00A3 /* Validator.swift */; };
 		AD8C4D2E24E699E3007F00A3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */; };
 		AD9973D124E192C10096C1F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D024E192C10096C1F4 /* RxSwift */; };
@@ -132,6 +133,7 @@
 			files = (
 				AD9973D624E192D30096C1F4 /* KeychainSwift in Frameworks */,
 				AD9973D324E192C10096C1F4 /* RxCocoa in Frameworks */,
+				AD858E8A251DE99E00BA2D36 /* Hero in Frameworks */,
 				AD9973D124E192C10096C1F4 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -365,6 +367,7 @@
 				AD9973D024E192C10096C1F4 /* RxSwift */,
 				AD9973D224E192C10096C1F4 /* RxCocoa */,
 				AD9973D524E192D30096C1F4 /* KeychainSwift */,
+				AD858E89251DE99E00BA2D36 /* Hero */,
 			);
 			productName = "Credit Card Store";
 			productReference = AD00906124DE90E9004EB706 /* Credit Card Store.app */;
@@ -397,6 +400,7 @@
 			packageReferences = (
 				AD9973CF24E192C10096C1F4 /* XCRemoteSwiftPackageReference "RxSwift" */,
 				AD9973D424E192D30096C1F4 /* XCRemoteSwiftPackageReference "keychain-swift" */,
+				AD858E88251DE99E00BA2D36 /* XCRemoteSwiftPackageReference "Hero" */,
 			);
 			productRefGroup = AD00906224DE90E9004EB706 /* Products */;
 			projectDirPath = "";
@@ -669,6 +673,14 @@
 /* End XCConfigurationList section */
 
 /* Begin XCRemoteSwiftPackageReference section */
+		AD858E88251DE99E00BA2D36 /* XCRemoteSwiftPackageReference "Hero" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/HeroTransitions/Hero";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.5.0;
+			};
+		};
 		AD9973CF24E192C10096C1F4 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/ReactiveX/RxSwift";
@@ -688,6 +700,11 @@
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
+		AD858E89251DE99E00BA2D36 /* Hero */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = AD858E88251DE99E00BA2D36 /* XCRemoteSwiftPackageReference "Hero" */;
+			productName = Hero;
+		};
 		AD9973D024E192C10096C1F4 /* RxSwift */ = {
 			isa = XCSwiftPackageProductDependency;
 			package = AD9973CF24E192C10096C1F4 /* XCRemoteSwiftPackageReference "RxSwift" */;
