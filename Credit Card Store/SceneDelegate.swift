@@ -60,5 +60,19 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
     func sceneDidEnterBackground(_ scene: UIScene) {
         Current.authorization.authorizeObserver.onNext(false)
     }
+    
+    func scene(_ scene: UIScene, continue userActivity: NSUserActivity) {
+        guard
+            userActivity.activityType == NSStringFromClass(AddNewCardIntentIntent.self)
+        else { return }
+        
+        guard let window = window else { return }
+        let controller = CardListViewController(with: cardListViewModel)
+        let navigationController = NavigationController(root: controller)
+        let datasource = AddCardNavigationDatasource(viewModel: addCardViewModel)
+        let addNewCardViewController = AddCardViewController(with: datasource)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
+        controller.show(addNewCardViewController, sender: nil)
+    }
 }
-

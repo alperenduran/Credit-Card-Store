@@ -60,12 +60,40 @@
 		AD858E8A251DE99E00BA2D36 /* Hero in Frameworks */ = {isa = PBXBuildFile; productRef = AD858E89251DE99E00BA2D36 /* Hero */; };
 		AD8C4D2C24E6985C007F00A3 /* Validator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2B24E6985C007F00A3 /* Validator.swift */; };
 		AD8C4D2E24E699E3007F00A3 /* StringExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */; };
+		AD935D93253C7E6400CDF9AE /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD935D92253C7E6400CDF9AE /* IntentHandler.swift */; };
+		AD935D97253C7E6400CDF9AE /* PelicanSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AD935D90253C7E6400CDF9AE /* PelicanSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AD935D9F253C7E7600CDF9AE /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AD935D9E253C7E7600CDF9AE /* Intents.intentdefinition */; };
+		AD935DA0253C7E7600CDF9AE /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = AD935D9E253C7E7600CDF9AE /* Intents.intentdefinition */; };
 		AD9973D124E192C10096C1F4 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D024E192C10096C1F4 /* RxSwift */; };
 		AD9973D324E192C10096C1F4 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D224E192C10096C1F4 /* RxCocoa */; };
 		AD9973D624E192D30096C1F4 /* KeychainSwift in Frameworks */ = {isa = PBXBuildFile; productRef = AD9973D524E192D30096C1F4 /* KeychainSwift */; };
 		AD9973D824E193650096C1F4 /* Navigator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9973D724E193650096C1F4 /* Navigator.swift */; };
 		AD9973DA24E194AA0096C1F4 /* AddCardNavigationDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = AD9973D924E194AA0096C1F4 /* AddCardNavigationDatasource.swift */; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		AD935D95253C7E6400CDF9AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AD00905924DE90E9004EB706 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AD935D8F253C7E6400CDF9AE;
+			remoteInfo = PelicanSiri;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		AD935D98253C7E6400CDF9AE /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				AD935D97253C7E6400CDF9AE /* PelicanSiri.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		AD00906124DE90E9004EB706 /* Credit Card Store.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Credit Card Store.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -122,6 +150,12 @@
 		AD7D524924E2ACDC00A3B1D2 /* CardListEmptyStateView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardListEmptyStateView.swift; sourceTree = "<group>"; };
 		AD8C4D2B24E6985C007F00A3 /* Validator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Validator.swift; sourceTree = "<group>"; };
 		AD8C4D2D24E699E3007F00A3 /* StringExtensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringExtensions.swift; sourceTree = "<group>"; };
+		AD935D90253C7E6400CDF9AE /* PelicanSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PelicanSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AD935D92253C7E6400CDF9AE /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		AD935D94253C7E6400CDF9AE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AD935D9E253C7E7600CDF9AE /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
+		AD935DA7253C83E400CDF9AE /* PelicanSiri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PelicanSiri.entitlements; sourceTree = "<group>"; };
+		AD935DAA253C87E300CDF9AE /* Credit Card Store.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Credit Card Store.entitlements"; sourceTree = "<group>"; };
 		AD9973D724E193650096C1F4 /* Navigator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Navigator.swift; sourceTree = "<group>"; };
 		AD9973D924E194AA0096C1F4 /* AddCardNavigationDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCardNavigationDatasource.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -138,13 +172,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD935D8D253C7E6400CDF9AE /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
 		AD00905824DE90E9004EB706 = {
 			isa = PBXGroup;
 			children = (
+				AD935D9E253C7E7600CDF9AE /* Intents.intentdefinition */,
 				AD00906324DE90E9004EB706 /* Credit Card Store */,
+				AD935D91253C7E6400CDF9AE /* PelicanSiri */,
 				AD00906224DE90E9004EB706 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -153,6 +196,7 @@
 			isa = PBXGroup;
 			children = (
 				AD00906124DE90E9004EB706 /* Credit Card Store.app */,
+				AD935D90253C7E6400CDF9AE /* PelicanSiri.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -160,6 +204,7 @@
 		AD00906324DE90E9004EB706 /* Credit Card Store */ = {
 			isa = PBXGroup;
 			children = (
+				AD935DAA253C87E300CDF9AE /* Credit Card Store.entitlements */,
 				AD00906424DE90E9004EB706 /* AppDelegate.swift */,
 				AD00906D24DE90EA004EB706 /* Assets.xcassets */,
 				AD0090B324DE9A9D004EB706 /* CustomViews */,
@@ -347,6 +392,16 @@
 			path = Success;
 			sourceTree = "<group>";
 		};
+		AD935D91253C7E6400CDF9AE /* PelicanSiri */ = {
+			isa = PBXGroup;
+			children = (
+				AD935DA7253C83E400CDF9AE /* PelicanSiri.entitlements */,
+				AD935D92253C7E6400CDF9AE /* IntentHandler.swift */,
+				AD935D94253C7E6400CDF9AE /* Info.plist */,
+			);
+			path = PelicanSiri;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -357,10 +412,12 @@
 				AD00905D24DE90E9004EB706 /* Sources */,
 				AD00905E24DE90E9004EB706 /* Frameworks */,
 				AD00905F24DE90E9004EB706 /* Resources */,
+				AD935D98253C7E6400CDF9AE /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				AD935D96253C7E6400CDF9AE /* PBXTargetDependency */,
 			);
 			name = "Credit Card Store";
 			packageProductDependencies = (
@@ -373,18 +430,38 @@
 			productReference = AD00906124DE90E9004EB706 /* Credit Card Store.app */;
 			productType = "com.apple.product-type.application";
 		};
+		AD935D8F253C7E6400CDF9AE /* PelicanSiri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AD935D9B253C7E6400CDF9AE /* Build configuration list for PBXNativeTarget "PelicanSiri" */;
+			buildPhases = (
+				AD935D8C253C7E6400CDF9AE /* Sources */,
+				AD935D8D253C7E6400CDF9AE /* Frameworks */,
+				AD935D8E253C7E6400CDF9AE /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PelicanSiri;
+			productName = PelicanSiri;
+			productReference = AD935D90253C7E6400CDF9AE /* PelicanSiri.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		AD00905924DE90E9004EB706 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 1160;
+				LastSwiftUpdateCheck = 1200;
 				LastUpgradeCheck = 1160;
 				ORGANIZATIONNAME = "Alperen Duran";
 				TargetAttributes = {
 					AD00906024DE90E9004EB706 = {
 						CreatedOnToolsVersion = 11.6;
+					};
+					AD935D8F253C7E6400CDF9AE = {
+						CreatedOnToolsVersion = 12.0.1;
 					};
 				};
 			};
@@ -407,6 +484,7 @@
 			projectRoot = "";
 			targets = (
 				AD00906024DE90E9004EB706 /* Credit Card Store */,
+				AD935D8F253C7E6400CDF9AE /* PelicanSiri */,
 			);
 		};
 /* End PBXProject section */
@@ -427,6 +505,13 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD935D8E253C7E6400CDF9AE /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -442,6 +527,7 @@
 				AD00909124DE955D004EB706 /* Environment.swift in Sources */,
 				AD53756B24DF1254003C3609 /* TextField.swift in Sources */,
 				AD00909F24DE98D7004EB706 /* UIColorExtensions.swift in Sources */,
+				AD935D9F253C7E7600CDF9AE /* Intents.intentdefinition in Sources */,
 				AD53755F24DF096C003C3609 /* AddCardViewController.swift in Sources */,
 				AD00909724DE95AA004EB706 /* KeychainKey.swift in Sources */,
 				AD00908C24DE94EF004EB706 /* With.swift in Sources */,
@@ -483,7 +569,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AD935D8C253C7E6400CDF9AE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AD935DA0253C7E7600CDF9AE /* Intents.intentdefinition in Sources */,
+				AD935D93253C7E6400CDF9AE /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		AD935D96253C7E6400CDF9AE /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AD935D8F253C7E6400CDF9AE /* PelicanSiri */;
+			targetProxy = AD935D95253C7E6400CDF9AE /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		AD00906F24DE90EA004EB706 /* LaunchScreen.storyboard */ = {
@@ -614,7 +717,9 @@
 		AD00907624DE90EA004EB706 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Credit Card Store/Credit Card Store.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24276C4JVA;
 				INFOPLIST_FILE = "Credit Card Store/Info.plist";
@@ -633,7 +738,9 @@
 		AD00907724DE90EA004EB706 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "Credit Card Store/Credit Card Store.entitlements";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 24276C4JVA;
 				INFOPLIST_FILE = "Credit Card Store/Info.plist";
@@ -646,6 +753,50 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+		AD935D99253C7E6400CDF9AE /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = PelicanSiri/PelicanSiri.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24276C4JVA;
+				INFOPLIST_FILE = PelicanSiri/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alperenduran.Credit-Card-Store.PelicanSiri";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AD935D9A253C7E6400CDF9AE /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CODE_SIGN_ENTITLEMENTS = PelicanSiri/PelicanSiri.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 24276C4JVA;
+				INFOPLIST_FILE = PelicanSiri/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.alperenduran.Credit-Card-Store.PelicanSiri";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Release;
 		};
@@ -666,6 +817,15 @@
 			buildConfigurations = (
 				AD00907624DE90EA004EB706 /* Debug */,
 				AD00907724DE90EA004EB706 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AD935D9B253C7E6400CDF9AE /* Build configuration list for PBXNativeTarget "PelicanSiri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AD935D99253C7E6400CDF9AE /* Debug */,
+				AD935D9A253C7E6400CDF9AE /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

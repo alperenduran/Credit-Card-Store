@@ -20,3 +20,10 @@ struct Card: Codable {
         "••••   ••••   ••••   \(cardNumber.suffix(4))"
     }
 }
+
+extension Card {
+    public var intent: AddNewCardIntentIntent{
+        let intent = AddNewCardIntentIntent()
+        return intent
+    }
+}
