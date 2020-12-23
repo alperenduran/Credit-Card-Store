@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import IntentsUI
 
 final class CardListView: UIView {
     
@@ -23,6 +24,10 @@ final class CardListView: UIView {
         $0.setBackgroundImage(UIImage(named: "addButton"), for: .normal)
     }
     
+    private(set) lazy var siriButton = with(INUIAddVoiceShortcutButton(style: .blackOutline)) {
+        $0.translatesAutoresizingMaskIntoConstraints = false
+    }
+    
     // MARK: - Initialization
     init() {
         super.init(frame: .zero)
@@ -30,6 +35,7 @@ final class CardListView: UIView {
         addSubview(backgroundView)
         addSubview(tableView)
         addSubview(addButton)
+        addSubview(siriButton)
         
         var constraints = tableView.alignFitEdges()
         addButton.alignSize(width: 45, height: 45)
@@ -40,7 +46,9 @@ final class CardListView: UIView {
         
         [
             addButton.centerX(in: self),
-            addButton.alignBottom(to: self, offset: -UIApplication.safeAreaBottomInset + -15)
+            addButton.alignBottom(to: self, offset: -UIApplication.safeAreaBottomInset + -15),
+            siriButton.alignBottom(to: addButton, offset: -10),
+            siriButton.centerX(in: self)
         ].forEach { constraints.append($0) }
         constraints.activate()
     }

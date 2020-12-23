@@ -21,17 +21,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let controller = CardListViewController(with: cardListViewModel)
         let navigationController = NavigationController(root: controller)
         let authorization = AuthorizeViewController(with: authorizeViewModel)
-        window.rootViewController = authorization
-        window.makeKeyAndVisible()
+//        window.rootViewController = authorization
+//        window.makeKeyAndVisible()
         
-        Current.authorization.authorizeObservable
-            .subscribe(onNext: { isAuthorized in
-                window.rootViewController = isAuthorized
-                    ? navigationController
-                    : authorization
-                window.makeKeyAndVisible()
-            })
-            .disposed(by: bag!)
+        window.rootViewController = navigationController
+        window.makeKeyAndVisible()
         
         self.window = window
     }
@@ -70,9 +64,11 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         let controller = CardListViewController(with: cardListViewModel)
         let navigationController = NavigationController(root: controller)
         let datasource = AddCardNavigationDatasource(viewModel: addCardViewModel)
-        let addNewCardViewController = AddCardViewController(with: datasource)
+        let addNewCardViewController = NavigationController(root: AddCardViewController(with: datasource))
         window.rootViewController = navigationController
+        addNewCardViewController.modalPresentationStyle = .fullScreen
+        controller.present(addNewCardViewController, animated: true)
         window.makeKeyAndVisible()
-        controller.show(addNewCardViewController, sender: nil)
+        
     }
 }

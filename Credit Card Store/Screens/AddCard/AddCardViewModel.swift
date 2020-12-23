@@ -157,3 +157,8 @@ private func validateField(
         )
         .map { _ in true }
 }
+
+func x() {
+    Observable.just(123)
+        
+}
