@@ -15,6 +15,7 @@ struct CardListViewModelInput {
     var cardSelected: Observable<IndexPath> = .never()
     var deleteCard: Observable<IndexPath> = .never()
     var addButtonTapped: Observable<Void> = .never()
+    var siriButtonTapped: Observable<Void> = .never()
 }
 
 struct CardListViewModelOutput {
@@ -22,6 +23,7 @@ struct CardListViewModelOutput {
     let copyCardNumber: Driver<String>
     let cardDeleted: Driver<Void>
     let openAddScreen: Driver<Void>
+    let openSiriModal: Driver<Void>
 }
 
 typealias CardListViewModel = (CardListViewModelInput) -> CardListViewModelOutput
@@ -33,7 +35,8 @@ func cardListViewModel(
         datasource: getDatasourceOutput(inputs),
         copyCardNumber: getCopyCardOutput(inputs),
         cardDeleted: getCardDeleted(inputs),
-        openAddScreen: getOpenAddScreenOutput(inputs)
+        openAddScreen: getOpenAddScreenOutput(inputs),
+        openSiriModal: getSiriScreenOutput(inputs)
     )
 }
 
@@ -71,6 +74,13 @@ private func getOpenAddScreenOutput(
     _ inputs: CardListViewModelInput
 ) -> Driver<Void> {
     inputs.addButtonTapped
+        .asDriver(onErrorDriveWith: .never())
+}
+
+private func getSiriScreenOutput(
+    _ inputs: CardListViewModelInput
+) -> Driver<Void> {
+    inputs.siriButtonTapped
         .asDriver(onErrorDriveWith: .never())
 }
 

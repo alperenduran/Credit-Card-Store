@@ -9,6 +9,7 @@
 import RxSwift
 import RxCocoa
 import UIKit
+import IntentsUI
 
 extension Reactive where Base: UIViewController {
     var showAddCard: Binder<Void> {
@@ -24,6 +25,14 @@ extension Reactive where Base: UIViewController {
             
             navigationController.modalPresentationStyle = .fullScreen
             target.present(navigationController, animated: true)
+        }
+    }
+    
+    var showAddSiri: Binder<Void> {
+        Binder(base) { target, _ in
+            guard let shortcut = INShortcut(intent: AddNewCardIntentIntent()) else { return }
+            let siriViewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+            target.present(siriViewController, animated: true)
         }
     }
 }

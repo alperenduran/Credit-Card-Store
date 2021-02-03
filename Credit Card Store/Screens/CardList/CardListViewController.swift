@@ -9,8 +9,17 @@
 import UIKit
 import RxSwift
 import RxCocoa
+import IntentsUI
 
-final class CardListViewController: UIViewController {
+final class CardListViewController: UIViewController, INUIAddVoiceShortcutViewControllerDelegate {
+    func addVoiceShortcutViewController(_ controller: INUIAddVoiceShortcutViewController, didFinishWith voiceShortcut: INVoiceShortcut?, error: Error?) {
+        siriCancelled.observer.onNext(())
+    }
+    
+    func addVoiceShortcutViewControllerDidCancel(_ controller: INUIAddVoiceShortcutViewController) {
+        siriCancelled.observer.onNext(())
+    }
+    
     
     // MARK: - Properties
     fileprivate lazy var viewSource = with(CardListView()) {
@@ -21,6 +30,7 @@ final class CardListViewController: UIViewController {
     let viewModel: CardListViewModel
     fileprivate var datasource: [CardListCellDisplayDatasource] = []
     let (copyObserver, copyObservable) = Observable<IndexPath>.pipe()
+    let siriCancelled = Observable<Void>.pipe()
     
     // MARK: - Initialization
     init(with viewModel: @escaping CardListViewModel) {
@@ -73,7 +83,8 @@ private extension CardListViewController {
             outputs.datasource.drive(rx.bindDatasource),
             outputs.openAddScreen.drive(rx.showAddCard),
             outputs.cardDeleted.drive(),
-            outputs.copyCardNumber.drive(rx.copyCardNumber)
+            outputs.copyCardNumber.drive(rx.copyCardNumber),
+            outputs.openSiriModal.drive(rx.showAddSiriSelf)
         )
     }
     
@@ -82,7 +93,8 @@ private extension CardListViewController {
             cards: Current.keychain.cardsEvent,
             cardSelected: viewSource.tableView.rx.itemSelected.asObservable(),
             deleteCard: viewSource.tableView.rx.itemDeleted.asObservable(),
-            addButtonTapped: viewSource.addButton.rx.tap.asObservable()
+            addButtonTapped: viewSource.addButton.rx.tap.asObservable(),
+            siriButtonTapped: viewSource.siriButton.rx.tap.asObservable()
         )
     }
 }
@@ -101,6 +113,20 @@ extension Reactive where Base == CardListViewController {
         Binder(base) { target, number in
             let clipboard = UIPasteboard.general
             clipboard.string = number
+        }
+    }
+    
+    var showAddSiriSelf: Binder<Void> {
+        Binder(base) { target, _ in
+            guard let shortcut = INShortcut(intent: AddNewCardIntentIntent()) else { return }
+            let siriViewController = INUIAddVoiceShortcutViewController(shortcut: shortcut)
+            siriViewController.delegate = target
+            target.present(siriViewController, animated: true)
+            
+            target.siriCancelled.observable
+                .subscribe(onNext: { _ in
+                    siriViewController.dismiss(animated: true)
+                }).disposed(by: target.bag)
         }
     }
 }

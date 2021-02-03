@@ -9,6 +9,7 @@
 import RxSwift
 import RxCocoa
 import Foundation
+import Intents
 
 struct AddCardViewModelInput {
     var cardName: Observable<String> = .never()
@@ -76,7 +77,7 @@ private func createCard(
     year: String,
     cvv: String
 ) -> Card {
-    Card(
+    let card = Card(
         name: name,
         cardNumber: number,
         cardholderName: holder,
@@ -84,6 +85,16 @@ private func createCard(
         expirationYear: year,
         cvv: cvv
     )
+    let interaction = INInteraction(intent: card.intent, response: nil)
+    interaction.identifier = "Add New Card"
+    
+    interaction.donate { (error) in
+        if let error = error {
+            print("fail olduk alposh")
+        }
+    }
+    
+    return card
 }
 
 // MARK: - Validation
@@ -145,4 +156,9 @@ private func validateField(
             )
         )
         .map { _ in true }
+}
+
+func x() {
+    Observable.just(123)
+        
 }
